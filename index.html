@@ -108,7 +108,7 @@
     .btn-modal-project { border-color:var(--accent); color:var(--accent); }
     .btn-modal-project:hover { background:var(--accent); color:var(--bg); }
 
-    /* ===== TECH STACK ===== */
+    /* TECH STACK */
     #techstack { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
     .stack-category { margin-bottom:3rem; }
     .stack-category:last-child { margin-bottom:0; }
@@ -117,17 +117,14 @@
     .stack-item {
       display:flex; flex-direction:column; align-items:center; justify-content:center;
       gap:0.75rem; width:120px; height:120px;
-      border-radius:14px; border:1px solid var(--border);
+      border-radius:0;
+      border:1px solid var(--border);
       background:var(--bg); transition:all 0.3s; cursor:default;
     }
     .stack-item:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 8px 25px rgba(155,241,255,0.08); }
     [data-theme="light"] .stack-item:hover { box-shadow:0 8px 25px rgba(74,92,247,0.12); }
     .stack-item img { width:48px; height:48px; object-fit:contain; }
-    .stack-custom-icon {
-      width:48px; height:48px; border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      font-weight:700; font-size:0.85rem; letter-spacing:1px; color:#fff;
-    }
+    .stack-custom-icon { width:48px; height:48px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; letter-spacing:1px; color:#fff; }
     .icon-sql { background:linear-gradient(135deg,#7B68EE,#4B0082); }
     .icon-dataiku { background:linear-gradient(135deg,#00bfb3,#007a75); }
     .icon-dust { background:linear-gradient(135deg,#6b6bff,#3a3aaa); }
@@ -136,15 +133,9 @@
     .stack-item span { font-size:0.68rem; text-align:center; color:var(--text-muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3; padding:0 0.3rem; }
     .stack-item:hover span { color:var(--accent); }
 
-    /* ===== CERTIFICATIONS & FORMATIONS ===== */
+    /* CERTIFICATIONS & FORMATIONS */
     .cert-list { display:flex; flex-direction:column; gap:0.8rem; }
-    .cert-item {
-      display:flex; align-items:center; gap:1.2rem;
-      padding:1.2rem 1.5rem;
-      background:var(--bg2); border:1px solid var(--border);
-      text-decoration:none; color:var(--text);
-      transition:all 0.3s;
-    }
+    .cert-item { display:flex; align-items:center; gap:1.2rem; padding:1.2rem 1.5rem; background:var(--bg2); border:1px solid var(--border); text-decoration:none; color:var(--text); transition:all 0.3s; }
     .cert-item:hover { border-color:var(--accent); background:var(--cert-hover); padding-left:2rem; }
     .cert-item-icon { font-size:1.4rem; flex-shrink:0; }
     .cert-item-info { flex-grow:1; }
@@ -272,9 +263,7 @@
         <p class="stack-category-label" data-fr="Analyse de données" data-en="Data Analysis">Analyse de données</p>
         <div class="stack-grid">
           <div class="stack-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                 data-dark="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                 data-light="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
             <span>Python</span>
           </div>
           <div class="stack-item">
@@ -282,21 +271,15 @@
             <span>SQL</span>
           </div>
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/googlesheets/34A853"
-                 data-dark="https://cdn.simpleicons.org/googlesheets/34A853"
-                 data-light="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets">
+            <img src="https://img.icons8.com/color/96/google-sheets.png" alt="Google Sheets">
             <span>Google Sheets</span>
           </div>
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/tableau/E97627"
-                 data-dark="https://cdn.simpleicons.org/tableau/E97627"
-                 data-light="https://cdn.simpleicons.org/tableau/E97627" alt="Tableau">
+            <img src="https://img.icons8.com/color/96/tableau-software.png" alt="Tableau">
             <span>Tableau</span>
           </div>
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/powerbi/F2C811"
-                 data-dark="https://cdn.simpleicons.org/powerbi/F2C811"
-                 data-light="https://cdn.simpleicons.org/powerbi/D4A800" alt="Power BI">
+            <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI">
             <span>Power BI</span>
           </div>
           <div class="stack-item">
@@ -314,9 +297,7 @@
             <span>Dust</span>
           </div>
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/make/6D00CC"
-                 data-dark="https://cdn.simpleicons.org/make/9b59ff"
-                 data-light="https://cdn.simpleicons.org/make/6D00CC" alt="Make">
+            <img src="https://img.icons8.com/color/96/make.png" alt="Make">
             <span>Make</span>
           </div>
           <div class="stack-item">
@@ -334,15 +315,11 @@
         <p class="stack-category-label" data-fr="Productivité & No-Code" data-en="Productivity & No-Code">Productivité & No-Code</p>
         <div class="stack-grid">
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/airtable/18BFFF"
-                 data-dark="https://cdn.simpleicons.org/airtable/18BFFF"
-                 data-light="https://cdn.simpleicons.org/airtable/18BFFF" alt="Airtable">
+            <img src="https://img.icons8.com/color/96/airtable.png" alt="Airtable">
             <span>Airtable</span>
           </div>
           <div class="stack-item">
-            <img src="https://cdn.simpleicons.org/notion/ffffff"
-                 data-dark="https://cdn.simpleicons.org/notion/ffffff"
-                 data-light="https://cdn.simpleicons.org/notion/1a1d35" alt="Notion">
+            <img src="https://img.icons8.com/color/96/notion--v1.png" alt="Notion">
             <span>Notion</span>
           </div>
         </div>
@@ -438,10 +415,6 @@
         html.removeAttribute('data-theme');
         document.getElementById('themeIcon').className = 'fas fa-sun';
       }
-      // Swap icon URLs based on theme
-      document.querySelectorAll('img[data-dark]').forEach(img => {
-        img.src = isLight ? img.dataset.light : img.dataset.dark;
-      });
     }
 
     function toggleLang() {
