@@ -26,12 +26,9 @@
       --hero-bg: linear-gradient(180deg,#dde1f5 0%,#f0f2ff 100%);
       --cert-hover: rgba(74,92,247,0.05);
     }
-
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); transition:background 0.3s,color 0.3s; }
-
-    /* NAVBAR */
     nav { position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(12px); padding:1rem 2.5rem; display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid var(--border); }
     .nav-logo { font-weight:700; font-size:1.2rem; color:var(--text); text-decoration:none; }
     .nav-logo span { color:var(--accent); }
@@ -44,8 +41,6 @@
     .theme-toggle { padding:0.35rem 0.65rem; font-size:0.85rem; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
     .hamburger span { width:25px; height:2px; background:var(--text); border-radius:2px; }
-
-    /* HERO */
     #hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:7rem 2rem 4rem; position:relative; background:var(--hero-bg); }
     .hero-content { max-width:750px; }
     .hero-greeting { font-size:0.8rem; color:var(--accent); font-weight:600; letter-spacing:4px; text-transform:uppercase; margin-bottom:1.5rem; }
@@ -57,53 +52,33 @@
     .btn:hover { border-color:var(--accent); color:var(--accent); }
     .scroll-indicator { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); color:var(--text-muted); font-size:1.3rem; animation:bounce 2s infinite; }
     @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-
-    /* SECTIONS */
     .section-wrapper { max-width:1100px; margin:0 auto; padding:5rem 2rem; }
     .section-title { font-size:clamp(1.8rem,4vw,2.4rem); font-weight:700; margin-bottom:0.4rem; }
     .section-title span { color:var(--accent); }
     .section-underline { width:60px; height:2px; background:var(--accent); margin-bottom:3rem; }
-
-    /* ABOUT */
     #about { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
     .about-text p { line-height:1.9; color:var(--text-muted); margin-bottom:1.2rem; font-size:0.95rem; }
-
-    /* ===================== PROJECTS ===================== */
-    #projects { background: var(--bg); }
-
+    #projects { background:var(--bg); }
     .project-filters { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.5rem; }
     .filter-btn { background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.4rem 1.1rem; font-family:'Poppins',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
     .filter-btn:hover { border-color:var(--accent); color:var(--accent); }
     .filter-btn.active { border-color:var(--accent); color:var(--bg); background:var(--accent); }
-
     .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
-
     .project-card { position:relative; overflow:hidden; aspect-ratio:4/3; cursor:pointer; background:var(--bg2); border:1px solid var(--border); transition:border-color 0.3s,transform 0.3s; }
     .project-card:hover { border-color:var(--accent); transform:translateY(-4px); }
-
-    .project-card-bg { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
-    .project-card:hover .project-card-bg { transform:scale(1.04); }
-
     .project-card-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:5rem; transition:transform 0.5s ease; }
     .project-card:hover .project-card-placeholder { transform:scale(1.04); }
-
-    .project-card-badge { position:absolute; top:1rem; left:1rem; background:rgba(20,23,45,0.75); backdrop-filter:blur(6px); color:var(--accent); font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.25rem 0.65rem; border:1px solid rgba(155,241,255,0.3); z-index:2; }
-
+    .project-card-bg { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
+    .project-card:hover .project-card-bg { transform:scale(1.04); }
     .project-card-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(20,23,45,0.95) 0%,rgba(20,23,45,0.55) 55%,transparent 100%); opacity:0; transition:opacity 0.35s ease; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; z-index:3; }
     .project-card:hover .project-card-overlay { opacity:1; }
-
     .project-card-overlay h3 { color:#fff; font-size:1rem; font-weight:700; margin-bottom:0.4rem; transform:translateY(8px); transition:transform 0.3s ease; line-height:1.3; }
     .project-card:hover .project-card-overlay h3 { transform:translateY(0); }
-
     .project-card-overlay p { color:rgba(255,255,255,0.78); font-size:0.76rem; line-height:1.55; transform:translateY(8px); transition:transform 0.3s ease 0.05s; }
     .project-card:hover .project-card-overlay p { transform:translateY(0); }
-
     .project-card-link-hint { display:inline-flex; align-items:center; gap:0.35rem; margin-top:0.6rem; color:var(--accent); font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; transform:translateY(8px); transition:transform 0.3s ease 0.1s; }
     .project-card:hover .project-card-link-hint { transform:translateY(0); }
-
     .project-card.hidden { display:none; }
-
-    /* ===================== MODAL ===================== */
     .modal-overlay { display:none; position:fixed; inset:0; background:rgba(12,15,35,0.88); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; backdrop-filter:blur(4px); }
     .modal-overlay.active { display:flex; }
     .modal { background:var(--bg2); border:1px solid var(--border); max-width:860px; width:100%; overflow:hidden; display:grid; grid-template-columns:1fr 1.2fr; max-height:88vh; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
@@ -122,8 +97,6 @@
     .btn-github:hover { border-color:var(--accent); color:var(--accent); }
     .btn-project { border-color:var(--accent); color:var(--accent); }
     .btn-project:hover { background:var(--accent); color:var(--bg); }
-
-    /* TECH STACK */
     #techstack { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
     .stack-category { margin-bottom:3rem; }
     .stack-category:last-child { margin-bottom:0; }
@@ -139,8 +112,6 @@
     .icon-rag { background:linear-gradient(135deg,#0072ff,#00c6ff); font-size:1.4rem; }
     .stack-item span { font-size:0.68rem; text-align:center; color:var(--text-muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3; padding:0 0.3rem; }
     .stack-item:hover span { color:var(--accent); }
-
-    /* CERTIFICATIONS */
     .cert-list { display:flex; flex-direction:column; gap:0.8rem; }
     .cert-item { display:flex; align-items:center; gap:1.2rem; padding:1.2rem 1.5rem; background:var(--bg2); border:1px solid var(--border); text-decoration:none; color:var(--text); transition:all 0.3s; }
     .cert-item:hover { border-color:var(--accent); background:var(--cert-hover); padding-left:2rem; }
@@ -151,15 +122,11 @@
     .cert-item-arrow { color:var(--accent); font-size:0.85rem; opacity:0; transition:opacity 0.3s; }
     .cert-item:hover .cert-item-arrow { opacity:1; }
     #formations { background:var(--bg2); border-top:1px solid var(--border); }
-
-    /* FOOTER */
     footer { background:var(--bg); text-align:center; padding:2.5rem 2rem; border-top:1px solid var(--border); }
     .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
     .footer-links a { color:var(--text-muted); font-size:1.4rem; transition:color 0.3s; }
     .footer-links a:hover { color:var(--accent); }
     footer p { font-size:0.8rem; color:var(--text-muted); }
-
-    /* RESPONSIVE */
     @media(max-width:768px){
       .nav-links { display:none; position:fixed; top:65px; left:0; width:100%; background:var(--bg2); flex-direction:column; padding:1.5rem 2rem; gap:1.2rem; border-bottom:1px solid var(--border); }
       .nav-links.open { display:flex; }
@@ -175,7 +142,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav>
     <a href="#hero" class="nav-logo">Ludivine <span>E.A.</span></a>
     <ul class="nav-links" id="navLinks">
@@ -185,58 +151,40 @@
       <li><a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a></li>
     </ul>
     <div class="nav-right">
-      <button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème"><i class="fas fa-sun" id="themeIcon"></i></button>
+      <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
       <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
       <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-content">
       <p class="hero-greeting" data-fr="✦ Bienvenue sur mon portfolio" data-en="✦ Welcome to my portfolio">✦ Bienvenue sur mon portfolio</p>
       <h1 class="hero-name">Ludivine <span>E.A.</span></h1>
-      <p class="hero-tagline"
-         data-fr="Étudiante en Master IA appliquée au Business"
-         data-en="AI Applied to Business Master's Student">
-        Étudiante en Master IA appliquée au Business
-      </p>
+      <p class="hero-tagline" data-fr="Étudiante en Master IA appliquée au Business" data-en="AI Applied to Business Master's Student">Étudiante en Master IA appliquée au Business</p>
       <div class="hero-buttons">
-        <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn">
-          <i class="fab fa-github"></i><span data-fr="GitHub" data-en="GitHub">GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
+        <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
     </div>
     <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="section-wrapper">
       <h2 class="section-title" id="aboutTitle">À <span>propos</span></h2>
       <div class="section-underline"></div>
       <div class="about-text">
-        <p data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business."
-           data-en="M1 student in AI Applied to Business at Eugenia School, I specialize in data analysis and artificial intelligence applied to real business challenges.">
-          Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.
-        </p>
-        <p data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision."
-           data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">
-          Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.
-        </p>
+        <p data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="M1 student in AI Applied to Business at Eugenia School, I specialize in data analysis and artificial intelligence applied to real business challenges.">Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
+        <p data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision." data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.</p>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="section-wrapper">
       <h2 class="section-title" id="projectsTitle">Mes <span>Projets</span></h2>
       <div class="section-underline"></div>
-
       <div class="project-filters">
         <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
         <button class="filter-btn" data-filter="python">Python</button>
@@ -244,10 +192,8 @@
         <button class="filter-btn" data-filter="ia" data-fr="IA & Automatisation" data-en="AI & Automation">IA & Automatisation</button>
         <button class="filter-btn" data-filter="powerbi">Power BI</button>
       </div>
-
       <div class="projects-grid">
 
-        <!-- CARTE LETTERBOXD -->
         <div class="project-card" data-category="python" onclick="openModal('letterboxd')">
           <div class="project-card-placeholder" style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);">🎬</div>
           <div class="project-card-overlay">
@@ -257,7 +203,6 @@
           </div>
         </div>
 
-        <!-- CARTE HACKATHON -->
         <div class="project-card" data-category="ia" onclick="openModal('hackathon')">
           <div class="project-card-placeholder" style="background:linear-gradient(135deg,#2d1b69 0%,#11998e 100%);">🏆</div>
           <div class="project-card-overlay">
@@ -271,7 +216,6 @@
     </div>
   </section>
 
-  <!-- TECH STACK -->
   <section id="techstack">
     <div class="section-wrapper">
       <h2 class="section-title">Tech <span>Stack</span></h2>
@@ -279,70 +223,33 @@
       <div class="stack-category">
         <p class="stack-category-label" data-fr="Analyse de données" data-en="Data Analysis">Analyse de données</p>
         <div class="stack-grid">
-          <div class="stack-item">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-            <span>Python</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/sql.png" alt="SQL" class="logo-white">
-            <span>SQL</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/googlesheets.png" alt="Google Sheets" class="logo-white">
-            <span>Google Sheets</span>
-          </div>
-          <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/tableau-software.png" alt="Tableau">
-            <span>Tableau</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/powerbi.png" alt="Power BI" class="logo-white">
-            <span>Power BI</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/dataiku.webp" alt="Dataiku" class="logo-white">
-            <span>Dataiku</span>
-          </div>
+          <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+          <div class="stack-item"><img src="./assets/sql.png" alt="SQL" class="logo-white"><span>SQL</span></div>
+          <div class="stack-item"><img src="./assets/googlesheets.png" alt="Google Sheets" class="logo-white"><span>Google Sheets</span></div>
+          <div class="stack-item"><img src="https://img.icons8.com/color/96/tableau-software.png" alt="Tableau"><span>Tableau</span></div>
+          <div class="stack-item"><img src="./assets/powerbi.png" alt="Power BI" class="logo-white"><span>Power BI</span></div>
+          <div class="stack-item"><img src="./assets/dataiku.webp" alt="Dataiku" class="logo-white"><span>Dataiku</span></div>
         </div>
       </div>
       <div class="stack-category">
         <p class="stack-category-label" data-fr="IA & Automatisation" data-en="AI & Automation">IA & Automatisation</p>
         <div class="stack-grid">
-          <div class="stack-item">
-            <img src="./assets/dust.png" alt="Dust" class="logo-white">
-            <span>Dust</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/make.png" alt="Make" class="logo-white">
-            <span>Make</span>
-          </div>
-          <div class="stack-item">
-            <div class="stack-custom-icon icon-rag">🧠</div>
-            <span>RAG</span>
-          </div>
-          <div class="stack-item">
-            <img src="./assets/cursor.png" alt="Cursor" class="logo-dark">
-            <span>Cursor</span>
-          </div>
+          <div class="stack-item"><img src="./assets/dust.png" alt="Dust" class="logo-white"><span>Dust</span></div>
+          <div class="stack-item"><img src="./assets/make.png" alt="Make" class="logo-white"><span>Make</span></div>
+          <div class="stack-item"><div class="stack-custom-icon icon-rag">🧠</div><span>RAG</span></div>
+          <div class="stack-item"><img src="./assets/cursor.png" alt="Cursor" class="logo-dark"><span>Cursor</span></div>
         </div>
       </div>
       <div class="stack-category">
         <p class="stack-category-label" data-fr="Productivité & No-Code" data-en="Productivity & No-Code">Productivité & No-Code</p>
         <div class="stack-grid">
-          <div class="stack-item">
-            <img src="./assets/airtable.jpg" alt="Airtable" class="logo-white">
-            <span>Airtable</span>
-          </div>
-          <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/notion--v1.png" alt="Notion">
-            <span>Notion</span>
-          </div>
+          <div class="stack-item"><img src="./assets/airtable.jpg" alt="Airtable" class="logo-white"><span>Airtable</span></div>
+          <div class="stack-item"><img src="https://img.icons8.com/color/96/notion--v1.png" alt="Notion"><span>Notion</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-wrapper">
       <h2 class="section-title"><span>Certifications</span></h2>
@@ -350,17 +257,13 @@
       <div class="cert-list">
         <a href="https://verify.skilljar.com/c/c5xu3fr5bujo" target="_blank" class="cert-item">
           <div class="cert-item-icon">🏅</div>
-          <div class="cert-item-info">
-            <h4>Dataiku Core Designer</h4>
-            <p data-fr="Janvier 2026" data-en="January 2026">Janvier 2026</p>
-          </div>
+          <div class="cert-item-info"><h4>Dataiku Core Designer</h4><p data-fr="Janvier 2026" data-en="January 2026">Janvier 2026</p></div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FORMATIONS -->
   <section id="formations">
     <div class="section-wrapper">
       <h2 class="section-title"><span>Formations</span></h2>
@@ -368,25 +271,18 @@
       <div class="cert-list">
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/423c19f350cc5709fed54b2391440834c385f22c" target="_blank" class="cert-item">
           <div class="cert-item-icon">📚</div>
-          <div class="cert-item-info">
-            <h4>Intermediate SQL</h4>
-            <p>DataCamp · 2026</p>
-          </div>
+          <div class="cert-item-info"><h4>Intermediate SQL</h4><p>DataCamp · 2026</p></div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/ba2196f8f51e1f6dcf7a3c0dbceed8ac2e4d7430" target="_blank" class="cert-item">
           <div class="cert-item-icon">📚</div>
-          <div class="cert-item-info">
-            <h4>Joining Data in SQL</h4>
-            <p>DataCamp · 2026</p>
-          </div>
+          <div class="cert-item-info"><h4>Joining Data in SQL</h4><p>DataCamp · 2026</p></div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- MODAL -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
     <div class="modal">
       <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
@@ -400,7 +296,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="https://github.com/ludivine-etou-apendi" target="_blank"><i class="fab fa-github"></i></a>
@@ -412,33 +307,29 @@
   <script>
     const projects = {
       letterboxd: {
-        emoji: '🎬',
-        imgSrc: null,
-        // ➡️ Plus tard : imgSrc: './assets/letterboxd-preview.png'
+        emoji: '🎬', imgSrc: null,
         imgBg: 'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',
         titleFr: 'Letterboxd — Analyse des Tendances Cinématographiques',
         titleEn: 'Letterboxd — Cinematographic Trends Analysis',
         descFr: "J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ? Quels pays dominent le Top 250 ?",
         descEn: "I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema releases? Which decade produces the best-rated films? Which countries dominate the Top 250?",
-        tags: ['Python', 'BeautifulSoup', 'Web Scraping', 'Google Sheets', 'Datawrapper', 'Analyse de données'],
+        tags: ['Python','BeautifulSoup','Web Scraping','Google Sheets','Analyse de données'],
         githubUrl: 'https://github.com/ludivine-etou-apendi',
         projectUrl: './letterboxd.html'
       },
       hackathon: {
-        emoji: '🏆',
-        imgSrc: null,
+        emoji: '🏆', imgSrc: null,
         imgBg: 'linear-gradient(135deg,#2d1b69 0%,#11998e 100%)',
         titleFr: 'Hackathon Miracle — 1er Prix 🏆',
         titleEn: 'Miracle Hackathon — 1st Prize 🏆',
         descFr: "Lauréate du Hackathon Miracle organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",
-        descEn: "Winner of the Miracle Hackathon organized by Eugenia School. We built an AI chatbot for premium wine cellar management using a RAG architecture connected to a Supabase database of 1,400+ Brazilian wines, with a conversational agent deployed on Dust.",
-        tags: ['Dust', 'RAG', 'Supabase', 'IA'],
+        descEn: "Winner of the Miracle Hackathon organized by Eugenia School. We built an AI chatbot for premium wine cellar management using a RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",
+        tags: ['Dust','RAG','Supabase','IA'],
         githubUrl: 'https://github.com/ludivine-etou-apendi',
         projectUrl: null
       }
     };
 
-    // FILTRE
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.project-card').forEach(card => {
@@ -449,23 +340,19 @@
       });
     });
 
-    // MODAL
+    let lang = 'fr', isLight = false;
+
     function openModal(id) {
       const p = projects[id]; if (!p) return;
       const preview = document.getElementById('modalPreview');
-      if (p.imgSrc) {
-        preview.innerHTML = `<img src="${p.imgSrc}" alt="${lang==='fr' ? p.titleFr : p.titleEn}">`;
-        preview.style.background = '';
-      } else {
-        preview.style.background = p.imgBg;
-        preview.innerHTML = `<span style="font-size:5rem">${p.emoji}</span>`;
-      }
+      if (p.imgSrc) { preview.innerHTML = `<img src="${p.imgSrc}" alt="">`; preview.style.background = ''; }
+      else { preview.style.background = p.imgBg; preview.innerHTML = `<span style="font-size:5rem">${p.emoji}</span>`; }
       document.getElementById('modalTitle').textContent = lang==='fr' ? p.titleFr : p.titleEn;
       document.getElementById('modalDesc').textContent = lang==='fr' ? p.descFr : p.descEn;
       document.getElementById('modalTags').innerHTML = p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
       let btns = '';
-      if (p.githubUrl) btns += `<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr' ? 'Voir sur GitHub' : 'View on GitHub'}</a>`;
-      if (p.projectUrl) btns += `<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-chart-bar"></i> ${lang==='fr' ? 'Voir le projet' : 'View Project'}</a>`;
+      if (p.githubUrl) btns += `<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;
+      if (p.projectUrl) btns += `<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-chart-bar"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;
       document.getElementById('modalButtons').innerHTML = btns;
       document.getElementById('modalOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -474,30 +361,21 @@
     function closeModalOutside(e) { if (e.target.id === 'modalOverlay') closeModal(); }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-    // THEME / LANG
-    let lang = 'fr';
-    let isLight = false;
-
     function toggleTheme() {
       isLight = !isLight;
       if (isLight) document.documentElement.setAttribute('data-theme','light');
       else document.documentElement.removeAttribute('data-theme');
       document.getElementById('themeIcon').className = isLight ? 'fas fa-moon' : 'fas fa-sun';
     }
-
     function toggleLang() {
       lang = lang === 'fr' ? 'en' : 'fr';
       document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
-      document.querySelectorAll('[data-fr]').forEach(el => {
-        el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en;
-      });
-      document.getElementById('aboutTitle').innerHTML = lang === 'fr' ? 'À <span>propos</span>' : 'About <span>me</span>';
-      document.getElementById('projectsTitle').innerHTML = lang === 'fr' ? 'Mes <span>Projets</span>' : 'My <span>Projects</span>';
+      document.querySelectorAll('[data-fr]').forEach(el => { el.innerHTML = lang==='fr' ? el.dataset.fr : el.dataset.en; });
+      document.getElementById('aboutTitle').innerHTML = lang==='fr' ? 'À <span>propos</span>' : 'About <span>me</span>';
+      document.getElementById('projectsTitle').innerHTML = lang==='fr' ? 'Mes <span>Projets</span>' : 'My <span>Projects</span>';
     }
-
     function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
     document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')); });
   </script>
-
 </body>
 </html>
