@@ -68,11 +68,7 @@
 
     /* ABOUT */
     #about { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .about-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:center; }
     .about-text p { line-height:1.9; color:var(--text-muted); margin-bottom:1.2rem; font-size:0.95rem; }
-    .about-highlight { border-left:4px solid var(--accent); padding:1.8rem; background:rgba(155,241,255,0.04); }
-    [data-theme="light"] .about-highlight { background:rgba(74,92,247,0.06); }
-    .about-highlight p { font-weight:500; line-height:1.7; font-size:0.95rem; }
 
     /* PROJECTS */
     .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:1.5rem; }
@@ -129,7 +125,6 @@
     .icon-dataiku { background:linear-gradient(135deg,#00bfb3,#007a75); }
     .icon-dust { background:linear-gradient(135deg,#6b6bff,#3a3aaa); }
     .icon-rag { background:linear-gradient(135deg,#0072ff,#00c6ff); font-size:1.4rem; }
-    .icon-cursor { background:linear-gradient(135deg,#1a1a2e,#16213e); border:1px solid rgba(255,255,255,0.2); font-size:1.2rem; }
     .stack-item span { font-size:0.68rem; text-align:center; color:var(--text-muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3; padding:0 0.3rem; }
     .stack-item:hover span { color:var(--accent); }
 
@@ -158,7 +153,6 @@
       .nav-links { display:none; position:fixed; top:65px; left:0; width:100%; background:var(--bg2); flex-direction:column; padding:1.5rem 2rem; gap:1.2rem; border-bottom:1px solid var(--border); }
       .nav-links.open { display:flex; }
       .hamburger { display:flex; }
-      .about-grid { grid-template-columns:1fr; gap:2rem; }
       .modal { grid-template-columns:1fr; }
       .modal-image { min-height:180px; }
       .section-wrapper { padding:3.5rem 1.5rem; }
@@ -190,12 +184,18 @@
     <div class="hero-content">
       <p class="hero-greeting" data-fr="✦ Bienvenue sur mon portfolio" data-en="✦ Welcome to my portfolio">✦ Bienvenue sur mon portfolio</p>
       <h1 class="hero-name">Ludivine <span>E.A.</span></h1>
-      <p class="hero-tagline" data-fr="Étudiante en Master IA appliquée au Business · Future Data Analyst" data-en="AI Applied to Business Master's Student · Aspiring Data Analyst">
-        Étudiante en Master IA appliquée au Business · Future Data Analyst
+      <p class="hero-tagline"
+         data-fr="Étudiante en Master IA appliquée au Business"
+         data-en="AI Applied to Business Master's Student">
+        Étudiante en Master IA appliquée au Business
       </p>
       <div class="hero-buttons">
-        <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn"><i class="fab fa-github"></i><span data-fr="Mon GitHub" data-en="My GitHub">Mon GitHub</span></a>
-        <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn">
+          <i class="fab fa-github"></i><span data-fr="GitHub" data-en="GitHub">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
       </div>
     </div>
     <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
@@ -206,23 +206,15 @@
     <div class="section-wrapper">
       <h2 class="section-title" id="aboutTitle">À <span>propos</span></h2>
       <div class="section-underline"></div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business."
-             data-en="M1 student in AI Applied to Business at Eugenia School, I specialize in data analysis and artificial intelligence applied to real business challenges.">
-            Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.
-          </p>
-          <p data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision."
-             data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">
-            Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.
-          </p>
-        </div>
-        <div class="about-highlight">
-          <p data-fr="🎯 Je recherche actuellement une alternance en tant que Data Analyst pour la rentrée 2026."
-             data-en="🎯 I am currently looking for a work-study contract as a Data Analyst starting September 2026.">
-            🎯 Je recherche actuellement une alternance en tant que Data Analyst pour la rentrée 2026.
-          </p>
-        </div>
+      <div class="about-text">
+        <p data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business."
+           data-en="M1 student in AI Applied to Business at Eugenia School, I specialize in data analysis and artificial intelligence applied to real business challenges.">
+          Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.
+        </p>
+        <p data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision."
+           data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">
+          Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.
+        </p>
       </div>
     </div>
   </section>
@@ -230,7 +222,7 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-wrapper">
-      <h2 class="section-title">Mes <span>Projets</span></h2>
+      <h2 class="section-title" id="projectsTitle">Mes <span>Projets</span></h2>
       <div class="section-underline"></div>
       <div class="projects-grid">
         <div class="project-card" onclick="openModal('project1')">
@@ -297,7 +289,7 @@
             <span>Dust</span>
           </div>
           <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/make.png" alt="Make">
+            <img src="https://logo.clearbit.com/make.com" alt="Make">
             <span>Make</span>
           </div>
           <div class="stack-item">
@@ -305,7 +297,7 @@
             <span>RAG</span>
           </div>
           <div class="stack-item">
-            <div class="stack-custom-icon icon-cursor">✦</div>
+            <img src="https://logo.clearbit.com/cursor.sh" alt="Cursor">
             <span>Cursor</span>
           </div>
         </div>
@@ -315,7 +307,7 @@
         <p class="stack-category-label" data-fr="Productivité & No-Code" data-en="Productivity & No-Code">Productivité & No-Code</p>
         <div class="stack-grid">
           <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/airtable.png" alt="Airtable">
+            <img src="https://logo.clearbit.com/airtable.com" alt="Airtable">
             <span>Airtable</span>
           </div>
           <div class="stack-item">
@@ -338,7 +330,7 @@
           <div class="cert-item-icon">🏅</div>
           <div class="cert-item-info">
             <h4>Dataiku Core Designer</h4>
-            <p data-fr="Délivré le 7 janvier 2026 · N° c5xu3fr5bujo" data-en="Issued Jan. 7, 2026 · No. c5xu3fr5bujo">Délivré le 7 janvier 2026 · N° c5xu3fr5bujo</p>
+            <p data-fr="Janvier 2026" data-en="January 2026">Janvier 2026</p>
           </div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
@@ -356,7 +348,7 @@
           <div class="cert-item-icon">📚</div>
           <div class="cert-item-info">
             <h4>Intermediate SQL</h4>
-            <p>DataCamp · <span data-fr="Complété le 4 avril 2026 · 4h" data-en="Completed Apr. 4, 2026 · 4h">Complété le 4 avril 2026 · 4h</span></p>
+            <p>DataCamp · 2026</p>
           </div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
@@ -364,7 +356,7 @@
           <div class="cert-item-icon">📚</div>
           <div class="cert-item-info">
             <h4>Joining Data in SQL</h4>
-            <p>DataCamp · <span data-fr="Complété le 6 avril 2026 · 4h" data-en="Completed Apr. 6, 2026 · 4h">Complété le 6 avril 2026 · 4h</span></p>
+            <p>DataCamp · 2026</p>
           </div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
@@ -420,8 +412,13 @@
     function toggleLang() {
       lang = lang === 'fr' ? 'en' : 'fr';
       document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
-      document.querySelectorAll('[data-fr]').forEach(el => { el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en; });
-      document.getElementById('aboutTitle').innerHTML = lang === 'fr' ? 'À <span>propos</span>' : 'About <span>me</span>';
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+      });
+      document.getElementById('aboutTitle').innerHTML =
+        lang === 'fr' ? 'À <span>propos</span>' : 'About <span>me</span>';
+      document.getElementById('projectsTitle').innerHTML =
+        lang === 'fr' ? 'Mes <span>Projets</span>' : 'My <span>Projects</span>';
     }
 
     function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
