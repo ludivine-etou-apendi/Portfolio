@@ -113,17 +113,33 @@
     .stack-item {
       display:flex; flex-direction:column; align-items:center; justify-content:center;
       gap:0.75rem; width:120px; height:120px;
-      border-radius:0;
       border:1px solid var(--border);
       background:var(--bg); transition:all 0.3s; cursor:default;
     }
     .stack-item:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 8px 25px rgba(155,241,255,0.08); }
     [data-theme="light"] .stack-item:hover { box-shadow:0 8px 25px rgba(74,92,247,0.12); }
-    .stack-item img { width:48px; height:48px; object-fit:contain; }
+
+    /* Gestion des fonds des logos */
+    .stack-item img {
+      width:48px; height:48px; object-fit:contain;
+    }
+    /* Logos sur fond blanc → conteneur blanc arrondi */
+    .stack-item img.logo-white {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 6px;
+      width: 48px;
+      height: 48px;
+      box-sizing: border-box;
+    }
+    /* Logos sur fond sombre → coins arrondis uniquement */
+    .stack-item img.logo-dark {
+      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+    }
+
     .stack-custom-icon { width:48px; height:48px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; letter-spacing:1px; color:#fff; }
-    .icon-sql { background:linear-gradient(135deg,#7B68EE,#4B0082); }
-    .icon-dataiku { background:linear-gradient(135deg,#00bfb3,#007a75); }
-    .icon-dust { background:linear-gradient(135deg,#6b6bff,#3a3aaa); }
     .icon-rag { background:linear-gradient(135deg,#0072ff,#00c6ff); font-size:1.4rem; }
     .stack-item span { font-size:0.68rem; text-align:center; color:var(--text-muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3; padding:0 0.3rem; }
     .stack-item:hover span { color:var(--accent); }
@@ -157,7 +173,7 @@
       .modal-image { min-height:180px; }
       .section-wrapper { padding:3.5rem 1.5rem; }
       .stack-item { width:100px; height:100px; }
-      .stack-item img { width:38px; height:38px; }
+      .stack-item img, .stack-item img.logo-white, .stack-item img.logo-dark { width:38px; height:38px; }
     }
   </style>
 </head>
@@ -254,66 +270,89 @@
       <div class="stack-category">
         <p class="stack-category-label" data-fr="Analyse de données" data-en="Data Analysis">Analyse de données</p>
         <div class="stack-grid">
+
           <div class="stack-item">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
             <span>Python</span>
           </div>
+
+          <!-- SQL : fond blanc ajouté -->
           <div class="stack-item">
-            <div class="stack-custom-icon icon-sql">SQL</div>
+            <img src="./assets/sql.png" alt="SQL" class="logo-white">
             <span>SQL</span>
           </div>
+
+          <!-- Google Sheets : fond blanc ajouté -->
           <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/google-sheets.png" alt="Google Sheets">
+            <img src="./assets/googlesheets.png" alt="Google Sheets" class="logo-white">
             <span>Google Sheets</span>
           </div>
+
           <div class="stack-item">
             <img src="https://img.icons8.com/color/96/tableau-software.png" alt="Tableau">
             <span>Tableau</span>
           </div>
+
+          <!-- Power BI : fond blanc ajouté -->
           <div class="stack-item">
-            <img src="https://img.icons8.com/color/96/power-bi.png" alt="Power BI">
+            <img src="./assets/powerbi.png" alt="Power BI" class="logo-white">
             <span>Power BI</span>
           </div>
+
+          <!-- Dataiku : fond blanc ajouté -->
           <div class="stack-item">
-            <div class="stack-custom-icon icon-dataiku">DSS</div>
+            <img src="./assets/dataiku.webp" alt="Dataiku" class="logo-white">
             <span>Dataiku</span>
           </div>
+
         </div>
       </div>
 
       <div class="stack-category">
         <p class="stack-category-label" data-fr="IA & Automatisation" data-en="AI & Automation">IA & Automatisation</p>
         <div class="stack-grid">
+
+          <!-- Dust : fond blanc ajouté -->
           <div class="stack-item">
-            <div class="stack-custom-icon icon-dust">AI</div>
+            <img src="./assets/dust.png" alt="Dust" class="logo-white">
             <span>Dust</span>
           </div>
+
+          <!-- Make : fond blanc ajouté -->
           <div class="stack-item">
-            <img src="https://logo.clearbit.com/make.com" alt="Make">
+            <img src="./assets/make.png" alt="Make" class="logo-white">
             <span>Make</span>
           </div>
+
           <div class="stack-item">
             <div class="stack-custom-icon icon-rag">🧠</div>
             <span>RAG</span>
           </div>
+
+          <!-- Cursor : fond sombre → coins arrondis uniquement -->
           <div class="stack-item">
-            <img src="https://logo.clearbit.com/cursor.sh" alt="Cursor">
+            <img src="./assets/cursor.png" alt="Cursor" class="logo-dark">
             <span>Cursor</span>
           </div>
+
         </div>
       </div>
 
       <div class="stack-category">
         <p class="stack-category-label" data-fr="Productivité & No-Code" data-en="Productivity & No-Code">Productivité & No-Code</p>
         <div class="stack-grid">
+
+          <!-- Airtable : fond blanc ajouté -->
           <div class="stack-item">
-            <img src="https://logo.clearbit.com/airtable.com" alt="Airtable">
+            <img src="./assets/airtable.jpg" alt="Airtable" class="logo-white">
             <span>Airtable</span>
           </div>
+
           <div class="stack-item">
             <img src="https://img.icons8.com/color/96/notion--v1.png" alt="Notion">
             <span>Notion</span>
           </div>
+
         </div>
       </div>
 
