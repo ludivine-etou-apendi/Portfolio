@@ -1,6 +1,6 @@
 # Portfolio
 
-Site personnel présentant une sélection de mes projets (parcours data, projets académiques, hackathons et projets personnels) depuis septembre 2025.
+Site personnel présentant une sélection de mes projets (projets académiques, hackathons et projets personnels) depuis septembre 2025.
 
 Le site est encore **en construction** : mise en page, contenu des pages projets et identité visuelle évoluent encore. Une **première version publique** et un **lien** vers le site seront ajoutés ici quand la V1 sera prête.
 
