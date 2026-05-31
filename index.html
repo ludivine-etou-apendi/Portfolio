@@ -3,184 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ludivine E.A. | Data Analyst Portfolio</title>
+  <title>Ludivine Etou Apendi | Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23c084fc'/><text y='0.78em' x='50%25' text-anchor='middle' font-size='60' fill='white' font-family='Arial' font-weight='bold'>L</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root {
-      --bg: #242943; --bg2: #2a2f4a; --bg3: #2e3450;
-      --accent: #9bf1ff; --text: #ffffff;
-      --text-muted: rgba(244,244,255,0.6);
-      --border: rgba(212,212,255,0.1);
-      --nav-bg: rgba(36,41,67,0.97);
-      --hero-bg: linear-gradient(180deg,#1e2240 0%,#242943 100%);
-      --cert-hover: rgba(155,241,255,0.05);
-    }
-    [data-theme="light"] {
-      --bg: #f0f2ff; --bg2: #e4e8f8; --bg3: #dde1f5;
-      --accent: #4a5cf7; --text: #1a1d35;
-      --text-muted: #5a6080;
-      --border: rgba(74,92,247,0.2);
-      --nav-bg: rgba(240,242,255,0.97);
-      --hero-bg: linear-gradient(180deg,#dde1f5 0%,#f0f2ff 100%);
-      --cert-hover: rgba(74,92,247,0.05);
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); transition:background 0.3s,color 0.3s; }
-    nav { position:fixed; top:0; width:100%; background:var(--nav-bg); backdrop-filter:blur(12px); padding:1rem 2.5rem; display:flex; justify-content:space-between; align-items:center; z-index:1000; border-bottom:1px solid var(--border); }
-    .nav-logo { font-weight:700; font-size:1.2rem; color:var(--text); text-decoration:none; }
-    .nav-logo span { color:var(--accent); }
-    .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
-    .nav-links a { text-decoration:none; color:var(--text-muted); font-weight:500; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; transition:color 0.3s; }
-    .nav-links a:hover { color:var(--accent); }
-    .nav-right { display:flex; align-items:center; gap:0.7rem; }
-    .lang-toggle, .theme-toggle { background:transparent; border:1px solid var(--border); padding:0.35rem 0.8rem; cursor:pointer; font-family:'Poppins',sans-serif; font-weight:600; font-size:0.78rem; letter-spacing:0.1em; color:var(--text-muted); transition:all 0.3s; }
-    .lang-toggle:hover, .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
-    .theme-toggle { padding:0.35rem 0.65rem; font-size:0.85rem; }
-    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
-    .hamburger span { width:25px; height:2px; background:var(--text); border-radius:2px; }
-    #hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:7rem 2rem 4rem; position:relative; background:var(--hero-bg); }
-    .hero-content { max-width:750px; }
-    .hero-greeting { font-size:0.8rem; color:var(--accent); font-weight:600; letter-spacing:4px; text-transform:uppercase; margin-bottom:1.5rem; }
-    .hero-name { font-size:clamp(3rem,7vw,5rem); font-weight:700; margin-bottom:1rem; line-height:1.1; }
-    .hero-name span { color:var(--accent); }
-    .hero-tagline { font-size:clamp(0.9rem,2vw,1.1rem); color:var(--text-muted); margin-bottom:3rem; line-height:1.8; }
-    .hero-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.85rem 2rem; text-decoration:none; font-weight:600; font-size:0.78rem; letter-spacing:0.15em; text-transform:uppercase; transition:all 0.3s; border:2px solid var(--text); color:var(--text); }
-    .btn:hover { border-color:var(--accent); color:var(--accent); }
-    .scroll-indicator { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); color:var(--text-muted); font-size:1.3rem; animation:bounce 2s infinite; }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-    .section-wrapper { max-width:1100px; margin:0 auto; padding:5rem 2rem; }
-    .section-title { font-size:clamp(1.8rem,4vw,2.4rem); font-weight:700; margin-bottom:0.4rem; }
-    .section-title span { color:var(--accent); }
-    .section-underline { width:60px; height:2px; background:var(--accent); margin-bottom:3rem; }
-    #about { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .about-text p { line-height:1.9; color:var(--text-muted); margin-bottom:1.2rem; font-size:0.95rem; }
-    #projects { background:var(--bg); }
-    .project-filters { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2.5rem; }
-    .filter-btn { background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.4rem 1.1rem; font-family:'Poppins',sans-serif; font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; }
-    .filter-btn:hover { border-color:var(--accent); color:var(--accent); }
-    .filter-btn.active { border-color:var(--accent); color:var(--bg); background:var(--accent); }
-    .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.2rem; }
-    .project-card { position:relative; overflow:hidden; aspect-ratio:4/3; cursor:pointer; background:var(--bg2); border:1px solid var(--border); transition:border-color 0.3s,transform 0.3s; }
-    .project-card:hover { border-color:var(--accent); transform:translateY(-4px); }
-    .project-card-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:5rem; transition:transform 0.5s ease; }
-    .project-card:hover .project-card-placeholder { transform:scale(1.04); }
-    .project-card-bg { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s ease; }
-    .project-card:hover .project-card-bg { transform:scale(1.04); }
-    .project-card-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(20,23,45,0.95) 0%,rgba(20,23,45,0.55) 55%,transparent 100%); opacity:0; transition:opacity 0.35s ease; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; z-index:3; }
-    .project-card:hover .project-card-overlay { opacity:1; }
-    .project-card-overlay h3 { color:#fff; font-size:1rem; font-weight:700; margin-bottom:0.4rem; transform:translateY(8px); transition:transform 0.3s ease; line-height:1.3; }
-    .project-card:hover .project-card-overlay h3 { transform:translateY(0); }
-    .project-card-overlay p { color:rgba(255,255,255,0.78); font-size:0.76rem; line-height:1.55; transform:translateY(8px); transition:transform 0.3s ease 0.05s; }
-    .project-card:hover .project-card-overlay p { transform:translateY(0); }
-    .project-card-link-hint { display:inline-flex; align-items:center; gap:0.35rem; margin-top:0.6rem; color:var(--accent); font-size:0.65rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; transform:translateY(8px); transition:transform 0.3s ease 0.1s; }
-    .project-card:hover .project-card-link-hint { transform:translateY(0); }
-    .project-card.hidden { display:none; }
-    .modal-overlay { display:none; position:fixed; inset:0; background:rgba(12,15,35,0.88); z-index:2000; align-items:center; justify-content:center; padding:1.5rem; backdrop-filter:blur(4px); }
-    .modal-overlay.active { display:flex; }
-    .modal { background:var(--bg2); border:1px solid var(--border); max-width:860px; width:100%; overflow:hidden; display:grid; grid-template-columns:1fr 1.2fr; max-height:88vh; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
-    .modal-preview { background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:5rem; min-height:340px; border-right:1px solid var(--border); overflow:hidden; }
-    .modal-preview img { width:100%; height:100%; object-fit:cover; }
-    .modal-body { padding:2.5rem 2.2rem; overflow-y:auto; display:flex; flex-direction:column; gap:1rem; }
-    .modal-close { position:absolute; top:1rem; right:1rem; background:none; border:none; width:36px; height:36px; cursor:pointer; color:var(--text-muted); font-size:1rem; display:flex; align-items:center; justify-content:center; transition:color 0.2s; z-index:10; }
-    .modal-close:hover { color:var(--accent); }
-    .modal-title { font-size:1.45rem; font-weight:700; line-height:1.3; }
-    .modal-desc { color:var(--text-muted); line-height:1.8; font-size:0.88rem; flex-grow:1; }
-    .modal-tags { display:flex; gap:0.4rem; flex-wrap:wrap; }
-    .modal-tag { background:transparent; color:var(--accent); border:1px solid var(--accent); font-size:0.68rem; padding:0.2rem 0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; }
-    .modal-buttons { display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:0.4rem; }
-    .btn-modal { display:inline-flex; align-items:center; gap:0.45rem; padding:0.65rem 1.3rem; text-decoration:none; font-weight:700; font-size:0.74rem; letter-spacing:0.12em; text-transform:uppercase; transition:all 0.3s; border:2px solid; }
-    .btn-github { border-color:var(--text); color:var(--text); }
-    .btn-github:hover { border-color:var(--accent); color:var(--accent); }
-    .btn-project { border-color:var(--accent); color:var(--accent); }
-    .btn-project:hover { background:var(--accent); color:var(--bg); }
-    #techstack { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
-    .stack-category { margin-bottom:3rem; }
-    .stack-category:last-child { margin-bottom:0; }
-    .stack-category-label { font-size:0.72rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:3px; margin-bottom:1.5rem; }
-    .stack-grid { display:flex; flex-wrap:wrap; gap:1rem; }
-    .stack-item { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.75rem; width:120px; height:120px; border:1px solid var(--border); background:var(--bg); transition:all 0.3s; cursor:default; }
-    .stack-item:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 8px 25px rgba(155,241,255,0.08); }
-    [data-theme="light"] .stack-item:hover { box-shadow:0 8px 25px rgba(74,92,247,0.12); }
-    .stack-item img { width:48px; height:48px; object-fit:contain; }
-    .stack-item img.logo-white { background:#ffffff; border-radius:10px; padding:6px; width:48px; height:48px; box-sizing:border-box; }
-    .stack-item img.logo-dark { border-radius:10px; width:48px; height:48px; }
-    .stack-custom-icon { width:48px; height:48px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.85rem; letter-spacing:1px; color:#fff; }
-    .icon-rag { background:linear-gradient(135deg,#0072ff,#00c6ff); font-size:1.4rem; }
-    .stack-item span { font-size:0.68rem; text-align:center; color:var(--text-muted); font-weight:600; letter-spacing:0.08em; text-transform:uppercase; line-height:1.3; padding:0 0.3rem; }
-    .stack-item:hover span { color:var(--accent); }
-    .cert-list { display:flex; flex-direction:column; gap:0.8rem; }
-    .cert-item { display:flex; align-items:center; gap:1.2rem; padding:1.2rem 1.5rem; background:var(--bg2); border:1px solid var(--border); text-decoration:none; color:var(--text); transition:all 0.3s; }
-    .cert-item:hover { border-color:var(--accent); background:var(--cert-hover); padding-left:2rem; }
-    .cert-item-icon { font-size:1.4rem; flex-shrink:0; }
-    .cert-item-info { flex-grow:1; }
-    .cert-item-info h4 { font-weight:600; font-size:0.95rem; margin-bottom:0.15rem; }
-    .cert-item-info p { font-size:0.75rem; color:var(--text-muted); }
-    .cert-item-arrow { color:var(--accent); font-size:0.85rem; opacity:0; transition:opacity 0.3s; }
-    .cert-item:hover .cert-item-arrow { opacity:1; }
-    #formations { background:var(--bg2); border-top:1px solid var(--border); }
-    footer { background:var(--bg); text-align:center; padding:2.5rem 2rem; border-top:1px solid var(--border); }
-    .footer-links { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1rem; }
-    .footer-links a { color:var(--text-muted); font-size:1.4rem; transition:color 0.3s; }
-    .footer-links a:hover { color:var(--accent); }
-    footer p { font-size:0.8rem; color:var(--text-muted); }
-    @media(max-width:768px){
-      .nav-links { display:none; position:fixed; top:65px; left:0; width:100%; background:var(--bg2); flex-direction:column; padding:1.5rem 2rem; gap:1.2rem; border-bottom:1px solid var(--border); }
-      .nav-links.open { display:flex; }
-      .hamburger { display:flex; }
-      .modal { grid-template-columns:1fr; }
-      .modal-preview { min-height:180px; }
-      .section-wrapper { padding:3.5rem 1.5rem; }
-      .stack-item { width:100px; height:100px; }
-      .stack-item img, .stack-item img.logo-white, .stack-item img.logo-dark { width:38px; height:38px; }
-      .projects-grid { grid-template-columns:1fr; }
-    }
+    :root{--bg:#0d0d12;--bg2:#181820;--bg3:#1e1e28;--accent:#c084fc;--text:#fff;--text-muted:rgba(244,244,255,0.6);--border:rgba(192,132,252,0.15);--nav-bg:rgba(13,13,18,0.97);}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);}
+    #splash{position:fixed;inset:0;background:#0d0d12;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;transition:opacity 0.9s ease;}
+    #splash-icon{font-size:2.5rem;color:#c084fc;animation:splash-pulse 1.2s ease-in-out infinite;}
+    @keyframes splash-pulse{0%,100%{transform:scale(1);opacity:0.7}50%{transform:scale(1.35);opacity:1}}
+    #splash-label{font-size:clamp(0.75rem,2vw,0.9rem);font-weight:500;color:rgba(255,255,255,0.5);letter-spacing:0.3em;text-transform:uppercase;}
+    nav{position:fixed;top:0;width:100%;background:var(--nav-bg);backdrop-filter:blur(12px);padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+    .nav-logo{font-weight:700;font-size:1.2rem;color:var(--text);text-decoration:none;position:relative;letter-spacing:0.05em;}
+    .nav-logo span{color:var(--accent);}
+    .nav-logo .nav-tooltip{position:absolute;top:calc(100% + 8px);left:0;background:var(--bg2);color:var(--text);padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:500;white-space:nowrap;opacity:0;transition:opacity 0.2s;border:1px solid var(--border);pointer-events:none;border-radius:4px;}
+    .nav-logo:hover .nav-tooltip{opacity:1;}
+    .nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+    .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:500;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.3s;}
+    .nav-links a:hover{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:0.7rem;}
+    .lang-toggle{background:transparent;border:1px solid var(--border);padding:0.35rem 0.8rem;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;font-size:0.78rem;letter-spacing:0.1em;color:var(--text-muted);transition:all 0.3s;}
+    .lang-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{width:25px;height:2px;background:var(--text);border-radius:2px;}
+    #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 2rem 4rem;background:var(--bg);}
+    .hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
+    .hero-text{text-align:left;}
+    .open-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.35);color:var(--accent);padding:0.4rem 1.2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1.8rem;border-radius:2rem;}
+    .hero-intro{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-bottom:0.2rem;}
+    .hero-name{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;margin-bottom:1.2rem;line-height:1.05;color:var(--accent);}
+    .hero-tagline{font-size:clamp(0.85rem,1.5vw,1rem);color:var(--text-muted);margin-bottom:1.2rem;line-height:1.8;}
+    .hero-about{color:var(--text-muted);font-size:0.92rem;line-height:1.85;margin-bottom:0.8rem;}
+    .hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;text-decoration:none;font-weight:600;font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;transition:all 0.3s;border:2px solid var(--text);color:var(--text);}
+    .btn:hover{border-color:var(--accent);color:var(--accent);}
+    .hero-avatar-col{display:flex;flex-direction:column;align-items:center;gap:0.8rem;flex-shrink:0;}
+    .potato-svg{width:160px;filter:drop-shadow(0 8px 24px rgba(192,132,252,0.25));transition:filter 0.3s,transform 0.3s;animation:potato-float 4s ease-in-out infinite;}
+    .potato-svg:hover{filter:drop-shadow(0 12px 32px rgba(192,132,252,0.5));animation-play-state:paused;transform:scale(1.05);}
+    @keyframes potato-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .avatar-label{font-size:0.8rem;font-weight:700;letter-spacing:0.2em;color:var(--text-muted);text-transform:uppercase;position:relative;cursor:default;}
+    .avatar-label .name-tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--bg2);color:var(--text);padding:0.3rem 0.8rem;font-size:0.72rem;font-weight:500;white-space:nowrap;opacity:0;transition:opacity 0.2s;border:1px solid var(--border);border-radius:4px;pointer-events:none;}
+    .avatar-label:hover .name-tooltip{opacity:1;}
+    section{background:var(--bg);}
+    .section-wrapper{max-width:1100px;margin:0 auto;padding:5rem 2rem;}
+    .section-title{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:0.4rem;}
+    .section-title span{color:var(--accent);}
+    .section-underline{width:60px;height:2px;background:var(--accent);margin-bottom:3rem;}
+    .project-filters{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem;}
+    .filter-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:0.4rem 1.1rem;font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;border-radius:2rem;}
+    .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .filter-btn.active{border-color:var(--accent);color:var(--bg);background:var(--accent);}
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
+    .project-card{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:var(--bg2);border:1px solid var(--border);transition:border-color 0.3s,transform 0.3s;}
+    .project-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+    .project-card-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;transition:transform 0.5s ease;}
+    .project-card:hover .project-card-placeholder{transform:scale(1.04);}
+    .project-card-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s ease;}
+    .project-card:hover .project-card-img{transform:scale(1.04);}
+    .project-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,20,0.95) 0%,rgba(10,8,20,0.55) 55%,transparent 100%);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;z-index:3;}
+    .project-card:hover .project-card-overlay{opacity:1;}
+    .project-card-overlay h3{color:#fff;font-size:1rem;font-weight:700;margin-bottom:0.4rem;transform:translateY(8px);transition:transform 0.3s ease;line-height:1.3;}
+    .project-card:hover .project-card-overlay h3{transform:translateY(0);}
+    .project-card-overlay p{color:rgba(255,255,255,0.78);font-size:0.76rem;line-height:1.55;transform:translateY(8px);transition:transform 0.3s ease 0.05s;}
+    .project-card:hover .project-card-overlay p{transform:translateY(0);}
+    .project-card-link-hint{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.6rem;color:var(--accent);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transform:translateY(8px);transition:transform 0.3s ease 0.1s;}
+    .project-card:hover .project-card-link-hint{transform:translateY(0);}
+    .project-card.hidden{display:none;}
+    .modal-overlay{display:none;position:fixed;inset:0;background:rgba(5,4,12,0.92);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
+    .modal-overlay.active{display:flex;}
+    .modal{background:var(--bg2);border:1px solid var(--border);max-width:860px;width:100%;overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;max-height:88vh;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.8);}
+    .modal-preview{background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:5rem;min-height:340px;border-right:1px solid var(--border);overflow:hidden;}
+    .modal-preview img{width:100%;height:100%;object-fit:cover;}
+    .modal-body{padding:2.5rem 2.2rem;overflow-y:auto;display:flex;flex-direction:column;gap:1rem;}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;width:36px;height:36px;cursor:pointer;color:var(--text-muted);font-size:1rem;display:flex;align-items:center;justify-content:center;transition:color 0.2s;z-index:10;}
+    .modal-close:hover{color:var(--accent);}
+    .modal-title{font-size:1.45rem;font-weight:700;line-height:1.3;}
+    .modal-desc{color:var(--text-muted);line-height:1.8;font-size:0.88rem;flex-grow:1;}
+    .modal-tags{display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .modal-tag{background:transparent;color:var(--accent);border:1px solid var(--accent);font-size:0.68rem;padding:0.2rem 0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;}
+    .modal-buttons{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:0.4rem;}
+    .btn-modal{display:inline-flex;align-items:center;gap:0.45rem;padding:0.65rem 1.3rem;text-decoration:none;font-weight:700;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;transition:all 0.3s;border:2px solid;}
+    .btn-github{border-color:var(--text);color:var(--text);}
+    .btn-github:hover{border-color:var(--accent);color:var(--accent);}
+    .btn-project{border-color:var(--accent);color:var(--accent);}
+    .btn-project:hover{background:var(--accent);color:var(--bg);}
+    .stack-category{margin-bottom:3rem;}
+    .stack-category:last-child{margin-bottom:0;}
+    .stack-category-label{font-size:0.72rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:3px;margin-bottom:2rem;}
+    .stack-grid{display:flex;flex-wrap:wrap;gap:2.5rem;}
+    @keyframes icon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .stack-item{display:flex;flex-direction:column;align-items:center;gap:0.6rem;cursor:default;animation:icon-float 3s ease-in-out infinite;}
+    .stack-item:nth-child(2n){animation-delay:-0.8s;}
+    .stack-item:nth-child(3n){animation-delay:-1.6s;}
+    .stack-item:nth-child(4n){animation-delay:-2.4s;}
+    .stack-item:hover{animation:none;transform:translateY(-10px) scale(1.15);}
+    .stack-item img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(192,132,252,0.2));transition:filter 0.3s;}
+    .stack-item:hover img{filter:drop-shadow(0 6px 16px rgba(192,132,252,0.7));}
+    .stack-item img.logo-white{background:#fff;border-radius:8px;padding:5px;box-sizing:border-box;}
+    .stack-item img.logo-dark{border-radius:8px;}
+    .stack-custom-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;border-radius:8px;filter:drop-shadow(0 2px 6px rgba(192,132,252,0.2));transition:filter 0.3s;}
+    .icon-rag{background:linear-gradient(135deg,#7c3aed,#c084fc);}
+    .stack-item:hover .stack-custom-icon{filter:drop-shadow(0 6px 16px rgba(192,132,252,0.7));}
+    .stack-item span{font-size:0.65rem;text-align:center;color:var(--text-muted);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;}
+    .stack-item:hover span{color:var(--accent);}
+    .cert-list{display:flex;flex-direction:column;}
+    .cert-item{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-bottom:1px solid rgba(192,132,252,0.08);text-decoration:none;color:var(--text);transition:all 0.3s;}
+    .cert-item:last-child{border-bottom:none;}
+    .cert-item:hover{color:var(--accent);padding-left:0.6rem;}
+    .cert-item-icon{font-size:1.3rem;flex-shrink:0;}
+    .cert-item-info{flex-grow:1;}
+    .cert-item-info h4{font-weight:600;font-size:0.92rem;margin-bottom:0.1rem;}
+    .cert-item-info p{font-size:0.73rem;color:var(--text-muted);}
+    .cert-item-arrow{color:var(--accent);font-size:0.85rem;opacity:0;transition:opacity 0.3s;}
+    .cert-item:hover .cert-item-arrow{opacity:1;}
+    footer{background:var(--bg);text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;margin-bottom:1rem;}
+    .footer-links a{color:var(--text-muted);font-size:1.4rem;transition:color 0.3s;}
+    .footer-links a:hover{color:var(--accent);}
+    footer p{font-size:0.8rem;color:var(--text-muted);}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-buttons{justify-content:center;}.hero-avatar-col{order:-1;}.potato-svg{width:120px;}}
+    @media(max-width:768px){.nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}.nav-links.open{display:flex;}.hamburger{display:flex;}.modal{grid-template-columns:1fr;}.modal-preview{min-height:180px;}.section-wrapper{padding:3.5rem 1.5rem;}.stack-grid{gap:1.8rem;}.projects-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
-
+  <div id="splash"><div id="splash-icon">✦</div><span id="splash-label">Bienvenue sur mon portfolio</span></div>
   <nav>
-    <a href="#hero" class="nav-logo">Ludivine <span>E.A.</span></a>
+    <a href="#hero" class="nav-logo">L<span>.</span>E<span>.</span>A<span>.</span><span class="nav-tooltip">Ludivine Etou Apendi</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about" data-fr="À propos" data-en="About">À propos</a></li>
       <li><a href="#projects" data-fr="Projets" data-en="Projects">Projets</a></li>
       <li><a href="#techstack">Tech Stack</a></li>
       <li><a href="#certifications" data-fr="Certifications" data-en="Certifications">Certifications</a></li>
     </ul>
     <div class="nav-right">
-      <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-sun" id="themeIcon"></i></button>
       <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
       <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </div>
   </nav>
-
   <section id="hero">
-    <div class="hero-content">
-      <p class="hero-greeting" data-fr="✦ Bienvenue sur mon portfolio" data-en="✦ Welcome to my portfolio">✦ Bienvenue sur mon portfolio</p>
-      <h1 class="hero-name">Ludivine <span>E.A.</span></h1>
-      <p class="hero-tagline" data-fr="Étudiante en Master IA appliquée au Business" data-en="AI Applied to Business Master's Student">Étudiante en Master IA appliquée au Business</p>
-      <div class="hero-buttons">
-        <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="open-badge" id="openBadge">✨ Ouverte à de nouvelles opportunités</div>
+        <p class="hero-intro" data-fr="Enchantée, moi c'est" data-en="Hi, I'm">Enchantée, moi c'est</p>
+        <h1 class="hero-name">Ludivine</h1>
+        <p class="hero-tagline" data-fr="Étudiante en Master IA appliquée au Business · Expérience en marketing" data-en="AI Applied to Business Master's Student · Marketing Experience">Étudiante en Master IA appliquée au Business · Expérience en marketing</p>
+        <p class="hero-about" data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, j'ai une expérience concrète en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="M1 student in AI Applied to Business at Eugenia School, I have hands-on experience in marketing and specialize in data analysis and AI applied to real business challenges.">Étudiante en M1 IA appliquée au Business à Eugenia School, j'ai une expérience concrète en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
+        <p class="hero-about" data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision." data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.</p>
+        <div class="hero-buttons">
+          <a href="https://github.com/ludivine-etou-apendi" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      <div class="hero-avatar-col">
+        <svg class="potato-svg" viewBox="0 0 160 195" xmlns="http://www.w3.org/2000/svg">
+          <line x1="80" y1="42" x2="80" y2="22" stroke="#c084fc" stroke-width="3" stroke-linecap="round"/>
+          <path d="M80,18 C80,18 70,8 70,13 C70,17 74,20 80,25 C86,20 90,17 90,13 C90,8 80,18 80,18Z" fill="#c084fc"/>
+          <ellipse cx="80" cy="118" rx="62" ry="70" fill="#d4a853"/>
+          <ellipse cx="52" cy="100" rx="7" ry="5.5" fill="#c49640" opacity="0.45"/>
+          <ellipse cx="112" cy="125" rx="6" ry="4.5" fill="#c49640" opacity="0.45"/>
+          <ellipse cx="60" cy="148" rx="5" ry="4" fill="#c49640" opacity="0.45"/>
+          <circle cx="64" cy="107" r="9" fill="white"/>
+          <circle cx="96" cy="107" r="9" fill="white"/>
+          <circle cx="66" cy="109" r="5.5" fill="#1a0d00"/>
+          <circle cx="98" cy="109" r="5.5" fill="#1a0d00"/>
+          <circle cx="68" cy="107" r="2" fill="white"/>
+          <circle cx="100" cy="107" r="2" fill="white"/>
+          <ellipse cx="50" cy="122" rx="12" ry="7" fill="#e07070" opacity="0.3"/>
+          <ellipse cx="110" cy="122" rx="12" ry="7" fill="#e07070" opacity="0.3"/>
+          <path d="M 56 135 Q 80 158 104 135" stroke="#1a0d00" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="avatar-label">L.E.A<span class="name-tooltip">Ludivine Etou Apendi</span></div>
       </div>
     </div>
-    <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
   </section>
-
-  <section id="about">
-    <div class="section-wrapper">
-      <h2 class="section-title" id="aboutTitle">À <span>propos</span></h2>
-      <div class="section-underline"></div>
-      <div class="about-text">
-        <p data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="M1 student in AI Applied to Business at Eugenia School, I specialize in data analysis and artificial intelligence applied to real business challenges.">Étudiante en M1 IA appliquée au Business à Eugenia School, je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
-        <p data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision." data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.</p>
-      </div>
-    </div>
-  </section>
-
   <section id="projects">
     <div class="section-wrapper">
       <h2 class="section-title" id="projectsTitle">Mes <span>Projets</span></h2>
@@ -193,29 +191,33 @@
         <button class="filter-btn" data-filter="powerbi">Power BI</button>
       </div>
       <div class="projects-grid">
-
         <div class="project-card" data-category="python" onclick="openModal('letterboxd')">
           <div class="project-card-placeholder" style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);">🎬</div>
           <div class="project-card-overlay">
             <h3 data-fr="Letterboxd — Analyse de 10 500 films" data-en="Letterboxd — Analysis of 10,500 films">Letterboxd — Analyse de 10 500 films</h3>
-            <p data-fr="Les films de streaming sont-ils au même niveau que le cinéma ? Quelle décennie domine Letterboxd ?" data-en="Are streaming films on the same level as cinema? Which decade dominates Letterboxd?">Les films de streaming sont-ils au même niveau que le cinéma ? Quelle décennie domine Letterboxd ?</p>
+            <p data-fr="Les films de streaming sont-ils au même niveau que le cinéma ? Quelle décennie domine Letterboxd ?" data-en="Are streaming films on the same level as cinema? Which decade dominates Letterboxd?">Les films de streaming sont-ils au même niveau que le cinéma ?</p>
             <span class="project-card-link-hint"><i class="fas fa-chart-bar"></i> <span data-fr="Voir le projet" data-en="View project">Voir le projet</span></span>
           </div>
         </div>
-
         <div class="project-card" data-category="ia" onclick="openModal('hackathon')">
-          <div class="project-card-placeholder" style="background:linear-gradient(135deg,#2d1b69 0%,#11998e 100%);">🏆</div>
+          <img src="./assets/hackathon.jpg" alt="Hackathon Mirakl" class="project-card-img">
           <div class="project-card-overlay">
-            <h3 data-fr="Hackathon — 1er Prix 🏆" data-en="Hackathon — 1st Prize 🏆">Hackathon — 1er Prix 🏆</h3>
-            <p data-fr="Lauréate du Hackathon Miracle : chatbot IA pour cave à vin premium avec RAG et Supabase." data-en="Winner of the Miracle Hackathon: AI chatbot for premium wine cellar with RAG and Supabase.">Lauréate du Hackathon Miracle : chatbot IA pour cave à vin premium avec RAG et Supabase.</p>
+            <h3 data-fr="Hackathon Mirakl — 1er Prix 🏆" data-en="Mirakl Hackathon — 1st Prize 🏆">Hackathon Mirakl — 1er Prix 🏆</h3>
+            <p data-fr="Lauréate du Hackathon Mirakl : chatbot IA pour cave à vin premium avec RAG et Supabase." data-en="Winner of the Mirakl Hackathon: AI chatbot for premium wine cellar with RAG and Supabase.">Lauréate du Hackathon Mirakl : chatbot IA pour cave à vin premium avec RAG et Supabase.</p>
             <span class="project-card-link-hint"><i class="fab fa-github"></i> <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span></span>
           </div>
         </div>
-
+        <div class="project-card" data-category="ia" onclick="openModal('breastwise')">
+          <div class="project-card-placeholder" style="background:linear-gradient(135deg,#1a0533 0%,#6b21a8 100%);">💜</div>
+          <div class="project-card-overlay">
+            <h3 data-fr="BreastWise — Application mobile santé" data-en="BreastWise — Health Mobile App">BreastWise — Application mobile santé</h3>
+            <p data-fr="Application mobile d'accompagnement pour les femmes touchées par le cancer du sein." data-en="Mobile companion app for breast cancer patients.">Application mobile d'accompagnement pour les femmes touchées par le cancer du sein.</p>
+            <span class="project-card-link-hint"><i class="fab fa-github"></i> <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span></span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <section id="techstack">
     <div class="section-wrapper">
       <h2 class="section-title">Tech <span>Stack</span></h2>
@@ -249,7 +251,6 @@
       </div>
     </div>
   </section>
-
   <section id="certifications">
     <div class="section-wrapper">
       <h2 class="section-title"><span>Certifications</span></h2>
@@ -263,7 +264,6 @@
       </div>
     </div>
   </section>
-
   <section id="formations">
     <div class="section-wrapper">
       <h2 class="section-title"><span>Formations</span></h2>
@@ -282,11 +282,10 @@
       </div>
     </div>
   </section>
-
   <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
     <div class="modal">
       <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
-      <div class="modal-preview" id="modalPreview">🎬</div>
+      <div class="modal-preview" id="modalPreview"></div>
       <div class="modal-body">
         <h2 class="modal-title" id="modalTitle"></h2>
         <p class="modal-desc" id="modalDesc"></p>
@@ -295,87 +294,29 @@
       </div>
     </div>
   </div>
-
   <footer>
     <div class="footer-links">
       <a href="https://github.com/ludivine-etou-apendi" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/ludivine-etou-apendi-alternance-2025-île-de-france/" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
-    <p>© 2026 Ludivine E.A. · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
+    <p>© 2026 Ludivine Etou Apendi · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
   </footer>
-
   <script>
-    const projects = {
-      letterboxd: {
-        emoji: '🎬', imgSrc: null,
-        imgBg: 'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',
-        titleFr: 'Letterboxd — Analyse des Tendances Cinématographiques',
-        titleEn: 'Letterboxd — Cinematographic Trends Analysis',
-        descFr: "J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ? Quels pays dominent le Top 250 ?",
-        descEn: "I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema releases? Which decade produces the best-rated films? Which countries dominate the Top 250?",
-        tags: ['Python','BeautifulSoup','Web Scraping','Google Sheets','Analyse de données'],
-        githubUrl: 'https://github.com/ludivine-etou-apendi',
-        projectUrl: './letterboxd.html'
-      },
-      hackathon: {
-        emoji: '🏆', imgSrc: null,
-        imgBg: 'linear-gradient(135deg,#2d1b69 0%,#11998e 100%)',
-        titleFr: 'Hackathon Miracle — 1er Prix 🏆',
-        titleEn: 'Miracle Hackathon — 1st Prize 🏆',
-        descFr: "Lauréate du Hackathon Miracle organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",
-        descEn: "Winner of the Miracle Hackathon organized by Eugenia School. We built an AI chatbot for premium wine cellar management using a RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",
-        tags: ['Dust','RAG','Supabase','IA'],
-        githubUrl: 'https://github.com/ludivine-etou-apendi',
-        projectUrl: null
-      }
+    setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),900);},1800);
+    const projects={
+      letterboxd:{emoji:'🎬',imgSrc:null,imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ?",descEn:"I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema releases? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi',projectUrl:'./letterboxd.html'},
+      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon organized by Eugenia School. We built an AI chatbot for premium wine cellar management using a RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi',projectUrl:null},
+      breastwise:{emoji:'💜',imgSrc:null,imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first development with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ema9995/Breastwise',projectUrl:'https://breastwise.netlify.app/'}
     };
-
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.project-card').forEach(card => {
-          card.classList.toggle('hidden', btn.dataset.filter !== 'all' && card.dataset.category !== btn.dataset.filter);
-        });
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-
-    let lang = 'fr', isLight = false;
-
-    function openModal(id) {
-      const p = projects[id]; if (!p) return;
-      const preview = document.getElementById('modalPreview');
-      if (p.imgSrc) { preview.innerHTML = `<img src="${p.imgSrc}" alt="">`; preview.style.background = ''; }
-      else { preview.style.background = p.imgBg; preview.innerHTML = `<span style="font-size:5rem">${p.emoji}</span>`; }
-      document.getElementById('modalTitle').textContent = lang==='fr' ? p.titleFr : p.titleEn;
-      document.getElementById('modalDesc').textContent = lang==='fr' ? p.descFr : p.descEn;
-      document.getElementById('modalTags').innerHTML = p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('');
-      let btns = '';
-      if (p.githubUrl) btns += `<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;
-      if (p.projectUrl) btns += `<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-chart-bar"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;
-      document.getElementById('modalButtons').innerHTML = btns;
-      document.getElementById('modalOverlay').classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() { document.getElementById('modalOverlay').classList.remove('active'); document.body.style.overflow = ''; }
-    function closeModalOutside(e) { if (e.target.id === 'modalOverlay') closeModal(); }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-    function toggleTheme() {
-      isLight = !isLight;
-      if (isLight) document.documentElement.setAttribute('data-theme','light');
-      else document.documentElement.removeAttribute('data-theme');
-      document.getElementById('themeIcon').className = isLight ? 'fas fa-moon' : 'fas fa-sun';
-    }
-    function toggleLang() {
-      lang = lang === 'fr' ? 'en' : 'fr';
-      document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
-      document.querySelectorAll('[data-fr]').forEach(el => { el.innerHTML = lang==='fr' ? el.dataset.fr : el.dataset.en; });
-      document.getElementById('aboutTitle').innerHTML = lang==='fr' ? 'À <span>propos</span>' : 'About <span>me</span>';
-      document.getElementById('projectsTitle').innerHTML = lang==='fr' ? 'Mes <span>Projets</span>' : 'My <span>Projects</span>';
-    }
-    function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
-    document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')); });
+    document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.project-card').forEach(card=>{card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter);});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
+    let lang='fr';
+    function openModal(id){const p=projects[id];if(!p)return;const preview=document.getElementById('modalPreview');if(p.imgSrc){preview.innerHTML=`<img src="${p.imgSrc}" alt="">`;preview.style.background='';}else{preview.style.background=p.imgBg;preview.innerHTML=`<span style="font-size:5rem">${p.emoji}</span>`;}document.getElementById('modalTitle').textContent=lang==='fr'?p.titleFr:p.titleEn;document.getElementById('modalDesc').textContent=lang==='fr'?p.descFr:p.descEn;document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');let btns='';if(p.githubUrl)btns+=`<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;if(p.projectUrl)btns+=`<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-chart-bar"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;document.getElementById('modalButtons').innerHTML=btns;document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';}
+    function closeModal(){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}
+    function closeModalOutside(e){if(e.target.id==='modalOverlay')closeModal();}
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+    function toggleLang(){lang=lang==='fr'?'en':'fr';document.getElementById('langBtn').textContent=lang==='fr'?'EN':'FR';document.querySelectorAll('[data-fr]').forEach(el=>{el.innerHTML=lang==='fr'?el.dataset.fr:el.dataset.en;});document.getElementById('openBadge').innerHTML=lang==='fr'?'✨ Ouverte à de nouvelles opportunités':'✨ Open to new opportunities';document.getElementById('projectsTitle').innerHTML=lang==='fr'?'Mes <span>Projets</span>':'My <span>Projects</span>';}
+    function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+    document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));});
   </script>
 </body>
 </html>
