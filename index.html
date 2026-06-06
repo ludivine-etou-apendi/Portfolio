@@ -84,7 +84,7 @@
     .btn-github:hover{border-color:var(--accent);color:var(--accent);}
     .btn-project{border-color:var(--accent);color:var(--accent);}
     .btn-project:hover{background:var(--accent);color:var(--bg);}
-    .stack-grid-flat{display:flex;flex-wrap:wrap;gap:3rem;}
+    .stack-grid-flat{display:grid;grid-template-columns:repeat(6,1fr);gap:2rem;justify-items:center;}
     @keyframes icon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     .stack-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;cursor:default;animation:icon-float 3s ease-in-out infinite;}
     .stack-item:nth-child(2n){animation-delay:-0.8s;}
@@ -123,8 +123,8 @@
     .contact-link span{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;}
     footer{background:var(--bg);text-align:center;padding:2rem;border-top:1px solid var(--border);}
     footer p{font-size:0.8rem;color:var(--text-muted);}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-avatar-col{order:-1;}.potato-svg{width:180px;}}
-    @media(max-width:768px){.nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}.nav-links.open{display:flex;}.hamburger{display:flex;}.modal{grid-template-columns:1fr;}.modal-preview{min-height:180px;}.section-wrapper{padding:3.5rem 1.5rem;}.stack-grid-flat{gap:2rem;}.projects-grid{grid-template-columns:1fr;}.contact-links{gap:2rem;}}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-avatar-col{order:-1;}.potato-svg{width:180px;}.stack-grid-flat{grid-template-columns:repeat(4,1fr);}}
+    @media(max-width:768px){.nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}.nav-links.open{display:flex;}.hamburger{display:flex;}.modal{grid-template-columns:1fr;}.modal-preview{min-height:180px;}.section-wrapper{padding:3.5rem 1.5rem;}.projects-grid{grid-template-columns:1fr;}.contact-links{gap:2rem;}.stack-grid-flat{grid-template-columns:repeat(3,1fr);}}
   </style>
 </head>
 <body>
@@ -150,7 +150,7 @@
         <div class="open-badge" id="openBadge">Ouverte à de nouvelles opportunités</div>
         <p class="hero-intro" data-fr="Enchantée, moi c'est" data-en="Hi, I'm">Enchantée, moi c'est</p>
         <h1 class="hero-name">Ludivine</h1>
-        <p class="hero-about" data-fr="Étudiante en M1 IA appliquée au Business à Eugenia School, j'ai une expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="M1 student in AI Applied to Business at Eugenia School, I have experience in marketing and specialize in data analysis and AI applied to real business challenges.">Étudiante en M1 IA appliquée au Business à Eugenia School, j'ai une expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
+        <p class="hero-about" data-fr="Étudiante en première année de MSc IA appliquée au Business à Eugenia School, j'ai de l'expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="First-year MSc student in AI Applied to Business at Eugenia School, I have experience in marketing and specialize in data analysis and AI applied to real business challenges.">Étudiante en première année de MSc IA appliquée au Business à Eugenia School, j'ai de l'expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
         <p class="hero-about" data-fr="Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision." data-en="Curious and rigorous, I love transforming raw data into actionable insights to support better decision-making.">Curieuse et rigoureuse, j'aime transformer des données brutes en insights actionnables pour aider à la prise de décision.</p>
       </div>
       <div class="hero-avatar-col">
@@ -262,6 +262,11 @@
       <h2 class="section-title"><span>Formations</span></h2>
       <div class="section-underline"></div>
       <div class="cert-list">
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/e444c3f59037f453a0563dfe6d899e5d29f58558" target="_blank" class="cert-item">
+          <div class="cert-item-icon">📚</div>
+          <div class="cert-item-info"><h4>Data Manipulation in SQL</h4><p>DataCamp · 2026</p></div>
+          <i class="fas fa-arrow-right cert-item-arrow"></i>
+        </a>
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/423c19f350cc5709fed54b2391440834c385f22c" target="_blank" class="cert-item">
           <div class="cert-item-icon">📚</div>
           <div class="cert-item-info"><h4>Intermediate SQL</h4><p>DataCamp · 2026</p></div>
@@ -270,11 +275,6 @@
         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/ba2196f8f51e1f6dcf7a3c0dbceed8ac2e4d7430" target="_blank" class="cert-item">
           <div class="cert-item-icon">📚</div>
           <div class="cert-item-info"><h4>Joining Data in SQL</h4><p>DataCamp · 2026</p></div>
-          <i class="fas fa-arrow-right cert-item-arrow"></i>
-        </a>
-        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/e444c3f59037f453a0563dfe6d899e5d29f58558" target="_blank" class="cert-item">
-          <div class="cert-item-icon">📚</div>
-          <div class="cert-item-info"><h4>Data Manipulation in SQL</h4><p>DataCamp · 2026</p></div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
       </div>
@@ -319,27 +319,14 @@
 
   <script>
     setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),900);},1800);
-
     const svg=document.getElementById('potatoSvg');
     const eyes=[{el:document.getElementById('pupilLeft'),sh:document.getElementById('shineLeft'),bx:79,by:128},{el:document.getElementById('pupilRight'),sh:document.getElementById('shineRight'),bx:119,by:128}];
-    document.addEventListener('mousemove',e=>{
-      const r=svg.getBoundingClientRect();
-      const sx=200/r.width,sy=240/r.height;
-      const mx=(e.clientX-r.left)*sx,my=(e.clientY-r.top)*sy;
-      eyes.forEach(({el,sh,bx,by})=>{
-        const dx=mx-bx,dy=my-by,dist=Math.sqrt(dx*dx+dy*dy)||1;
-        const max=4.5,fx=dx/dist*Math.min(max,dist/8),fy=dy/dist*Math.min(max,dist/8);
-        el.setAttribute('cx',bx+fx);el.setAttribute('cy',by+fy);
-        sh.setAttribute('cx',bx+fx+2);sh.setAttribute('cy',by+fy-2.5);
-      });
-    });
-
+    document.addEventListener('mousemove',e=>{const r=svg.getBoundingClientRect();const sx=200/r.width,sy=240/r.height;const mx=(e.clientX-r.left)*sx,my=(e.clientY-r.top)*sy;eyes.forEach(({el,sh,bx,by})=>{const dx=mx-bx,dy=my-by,dist=Math.sqrt(dx*dx+dy*dy)||1;const max=4.5,fx=dx/dist*Math.min(max,dist/8),fy=dy/dist*Math.min(max,dist/8);el.setAttribute('cx',bx+fx);el.setAttribute('cy',by+fy);sh.setAttribute('cx',bx+fx+2);sh.setAttribute('cy',by+fy-2.5);});});
     const projects={
       letterboxd:{emoji:'🎬',imgSrc:null,imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ?",descEn:"I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi/letterboxd-data-analysis',projectUrl:'./letterboxd.html'},
-      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:null},
+      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:null},
       breastwise:{emoji:'💜',imgSrc:null,imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ema9995/Breastwise',projectUrl:'https://breastwise.netlify.app/'}
     };
-
     document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.project-card').forEach(card=>{card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter);});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
     let lang='fr';
     function openModal(id){const p=projects[id];if(!p)return;const preview=document.getElementById('modalPreview');if(p.imgSrc){preview.innerHTML=`<img src="${p.imgSrc}" alt="">`;preview.style.background='';}else{preview.style.background=p.imgBg;preview.innerHTML=`<span style="font-size:5rem">${p.emoji}</span>`;}document.getElementById('modalTitle').textContent=lang==='fr'?p.titleFr:p.titleEn;document.getElementById('modalDesc').textContent=lang==='fr'?p.descFr:p.descEn;document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');let btns='';if(p.githubUrl)btns+=`<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;if(p.projectUrl)btns+=`<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-external-link-alt"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;document.getElementById('modalButtons').innerHTML=btns;document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';}
