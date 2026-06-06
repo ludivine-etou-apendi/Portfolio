@@ -33,12 +33,12 @@
     #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 2rem 4rem;background:var(--bg);}
     .hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
     .hero-text{text-align:left;}
-    .open-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.35);color:var(--accent);padding:0.4rem 1.2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1.8rem;border-radius:2rem;}
+    .open-badge{display:inline-flex;align-items:center;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.35);color:var(--accent);padding:0.4rem 1.2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1.8rem;border-radius:2rem;}
     .hero-intro{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-bottom:0.2rem;}
     .hero-name{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;margin-bottom:1.4rem;line-height:1.05;color:var(--accent);}
     .hero-about{color:var(--text-muted);font-size:0.92rem;line-height:1.85;margin-bottom:0.8rem;}
     .hero-avatar-col{display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
-    .potato-svg{width:200px;cursor:none;filter:drop-shadow(0 16px 32px rgba(0,0,0,0.5));animation:potato-float 4s ease-in-out infinite;}
+    .potato-svg{width:260px;animation:potato-float 4s ease-in-out infinite;}
     .potato-svg:hover{animation-play-state:paused;}
     @keyframes potato-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     section{background:var(--bg);}
@@ -84,7 +84,6 @@
     .btn-github:hover{border-color:var(--accent);color:var(--accent);}
     .btn-project{border-color:var(--accent);color:var(--accent);}
     .btn-project:hover{background:var(--accent);color:var(--bg);}
-    /* TECH STACK — flat, no categories, big icons */
     .stack-grid-flat{display:flex;flex-wrap:wrap;gap:3rem;}
     @keyframes icon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     .stack-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;cursor:default;animation:icon-float 3s ease-in-out infinite;}
@@ -102,7 +101,6 @@
     .stack-item:hover .stack-custom-icon{filter:drop-shadow(0 6px 20px rgba(192,132,252,0.8));}
     .stack-item span{font-size:0.7rem;text-align:center;color:var(--text-muted);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.3s;}
     .stack-item:hover span{color:var(--accent);}
-    /* CERTS */
     .cert-list{display:flex;flex-direction:column;}
     .cert-item{display:flex;align-items:center;gap:1.2rem;padding:1rem 0;border-bottom:1px solid rgba(192,132,252,0.08);text-decoration:none;color:var(--text);transition:all 0.3s;}
     .cert-item:last-child{border-bottom:none;}
@@ -113,8 +111,10 @@
     .cert-item-info p{font-size:0.73rem;color:var(--text-muted);}
     .cert-item-arrow{color:var(--accent);font-size:0.85rem;opacity:0;transition:opacity 0.3s;}
     .cert-item:hover .cert-item-arrow{opacity:1;}
-    /* CONTACT */
     #contact{text-align:center;}
+    .contact-photo{display:flex;justify-content:center;margin-bottom:2rem;}
+    .photo-placeholder{width:110px;height:110px;border-radius:50%;border:2px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.65rem;gap:0.4rem;letter-spacing:0.05em;}
+    .photo-placeholder i{font-size:2rem;color:var(--accent);opacity:0.5;}
     .contact-sub{color:var(--text-muted);font-size:0.95rem;margin-bottom:2.5rem;line-height:1.7;}
     .contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:3rem;margin-top:1rem;}
     .contact-link{display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--text-muted);text-decoration:none;transition:color 0.3s;}
@@ -123,7 +123,7 @@
     .contact-link span{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;}
     footer{background:var(--bg);text-align:center;padding:2rem;border-top:1px solid var(--border);}
     footer p{font-size:0.8rem;color:var(--text-muted);}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-avatar-col{order:-1;}.potato-svg{width:150px;}}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-avatar-col{order:-1;}.potato-svg{width:180px;}}
     @media(max-width:768px){.nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}.nav-links.open{display:flex;}.hamburger{display:flex;}.modal{grid-template-columns:1fr;}.modal-preview{min-height:180px;}.section-wrapper{padding:3.5rem 1.5rem;}.stack-grid-flat{gap:2rem;}.projects-grid{grid-template-columns:1fr;}.contact-links{gap:2rem;}}
   </style>
 </head>
@@ -156,53 +156,26 @@
       <div class="hero-avatar-col">
         <svg id="potatoSvg" class="potato-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <radialGradient id="bodyGrad" cx="36%" cy="30%" r="70%">
-              <stop offset="0%" stop-color="#f5dfa0"/>
-              <stop offset="50%" stop-color="#d4a853"/>
-              <stop offset="100%" stop-color="#8a5820"/>
-            </radialGradient>
-            <radialGradient id="bowGrad" cx="35%" cy="25%" r="70%">
-              <stop offset="0%" stop-color="#3a3a3a"/>
-              <stop offset="100%" stop-color="#111"/>
-            </radialGradient>
-            <radialGradient id="eyeGrad" cx="35%" cy="30%" r="65%">
-              <stop offset="0%" stop-color="#fff"/>
-              <stop offset="100%" stop-color="#e8e8e8"/>
-            </radialGradient>
-            <filter id="shadow">
-              <feDropShadow dx="2" dy="6" stdDeviation="5" flood-color="rgba(0,0,0,0.5)"/>
+            <filter id="extrude" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="1.5" dy="1.5" stdDeviation="0" flood-color="rgba(200,200,200,0.85)"/>
+              <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="rgba(150,150,150,0.65)"/>
+              <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="rgba(100,100,100,0.45)"/>
+              <feDropShadow dx="7" dy="7" stdDeviation="6" flood-color="rgba(0,0,0,0.8)"/>
             </filter>
           </defs>
-          <!-- Ground shadow -->
-          <ellipse cx="100" cy="228" rx="62" ry="9" fill="rgba(0,0,0,0.25)"/>
-          <!-- Bow left loop -->
-          <path d="M100,60 C88,40 60,43 65,60 C70,77 92,70 100,60Z" fill="url(#bowGrad)"/>
-          <!-- Bow right loop -->
-          <path d="M100,60 C112,40 140,43 135,60 C130,77 108,70 100,60Z" fill="url(#bowGrad)"/>
-          <!-- Bow knot -->
-          <ellipse cx="100" cy="60" rx="7" ry="5.5" fill="#222"/>
-          <ellipse cx="100" cy="59" rx="4" ry="2.5" fill="#444"/>
-          <!-- Potato body with 3D gradient -->
-          <path d="M100,195 C68,195 42,173 41,147 C40,120 53,93 77,79 C88,72 106,71 122,77 C147,87 168,113 166,142 C164,172 132,195 100,195Z" fill="url(#bodyGrad)" filter="url(#shadow)" stroke="#9a6e2a" stroke-width="1.5"/>
-          <!-- Highlight top-left (3D shine) -->
-          <ellipse cx="78" cy="100" rx="22" ry="14" fill="white" opacity="0.18" transform="rotate(-25,78,100)"/>
-          <!-- Small specular dot -->
-          <circle cx="68" cy="90" r="7" fill="white" opacity="0.12"/>
-          <!-- Eye whites (left) -->
-          <circle cx="80" cy="130" r="11" fill="url(#eyeGrad)" stroke="#ccc" stroke-width="0.5"/>
-          <!-- Eye whites (right) -->
-          <circle cx="118" cy="130" r="11" fill="url(#eyeGrad)" stroke="#ccc" stroke-width="0.5"/>
-          <!-- Pupils -->
-          <circle id="pupilLeft" cx="80" cy="130" r="6.5" fill="#1a0800"/>
-          <circle id="pupilRight" cx="118" cy="130" r="6.5" fill="#1a0800"/>
-          <!-- Pupil shines (move with JS) -->
-          <circle id="shineLeft" cx="82" cy="127" r="2" fill="white"/>
-          <circle id="shineRight" cx="120" cy="127" r="2" fill="white"/>
-          <!-- Blush cheeks -->
-          <ellipse cx="64" cy="142" rx="13" ry="7" fill="#e07070" opacity="0.22"/>
-          <ellipse cx="136" cy="142" rx="13" ry="7" fill="#e07070" opacity="0.22"/>
-          <!-- Smile -->
-          <path d="M76,160 Q100,180 124,160" stroke="#7a4010" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <g filter="url(#extrude)">
+            <path d="M100,58 C88,40 62,43 67,58 C72,73 93,66 100,58Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
+            <path d="M100,58 C112,40 138,43 133,58 C128,73 107,66 100,58Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
+            <ellipse cx="100" cy="58" rx="7" ry="5.5" fill="white"/>
+            <path d="M100,196 C67,196 41,173 40,147 C39,119 53,92 77,78 C89,71 107,71 123,77 C148,88 169,115 167,143 C165,173 133,196 100,196Z" fill="none" stroke="white" stroke-width="4.5" stroke-linejoin="round"/>
+            <path d="M75,160 Q100,180 125,160" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+          <circle cx="79" cy="128" r="12" fill="white"/>
+          <circle cx="119" cy="128" r="12" fill="white"/>
+          <circle id="pupilLeft" cx="79" cy="128" r="6.5" fill="#0d0d12"/>
+          <circle id="pupilRight" cx="119" cy="128" r="6.5" fill="#0d0d12"/>
+          <circle id="shineLeft" cx="81" cy="125" r="2.2" fill="white"/>
+          <circle id="shineRight" cx="121" cy="125" r="2.2" fill="white"/>
         </svg>
       </div>
     </div>
@@ -299,6 +272,11 @@
           <div class="cert-item-info"><h4>Joining Data in SQL</h4><p>DataCamp · 2026</p></div>
           <i class="fas fa-arrow-right cert-item-arrow"></i>
         </a>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/course/e444c3f59037f453a0563dfe6d899e5d29f58558" target="_blank" class="cert-item">
+          <div class="cert-item-icon">📚</div>
+          <div class="cert-item-info"><h4>Data Manipulation in SQL</h4><p>DataCamp · 2026</p></div>
+          <i class="fas fa-arrow-right cert-item-arrow"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -307,6 +285,12 @@
     <div class="section-wrapper">
       <h2 class="section-title" id="contactTitle">Restons en <span>contact</span></h2>
       <div class="section-underline" style="margin-left:auto;margin-right:auto;"></div>
+      <div class="contact-photo">
+        <div class="photo-placeholder">
+          <i class="fas fa-user"></i>
+          <span data-fr="Photo à venir" data-en="Photo coming soon">Photo à venir</span>
+        </div>
+      </div>
       <p class="contact-sub" data-fr="Merci d'avoir parcouru mon portfolio. N'hésitez pas à me contacter !" data-en="Thanks for visiting my portfolio — feel free to reach out!">Merci d'avoir parcouru mon portfolio. N'hésitez pas à me contacter !</p>
       <div class="contact-links">
         <a href="mailto:ludivine.etouapendi@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>Email</span></a>
@@ -336,26 +320,23 @@
   <script>
     setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),900);},1800);
 
-    // Pupils follow cursor
     const svg=document.getElementById('potatoSvg');
-    const pL=document.getElementById('pupilLeft'),pR=document.getElementById('pupilRight');
-    const sL=document.getElementById('shineLeft'),sR=document.getElementById('shineRight');
-    const eyes=[{el:pL,shine:sL,bx:80,by:130},{el:pR,shine:sR,bx:118,by:130}];
+    const eyes=[{el:document.getElementById('pupilLeft'),sh:document.getElementById('shineLeft'),bx:79,by:128},{el:document.getElementById('pupilRight'),sh:document.getElementById('shineRight'),bx:119,by:128}];
     document.addEventListener('mousemove',e=>{
       const r=svg.getBoundingClientRect();
-      const sx=200/r.width, sy=240/r.height;
-      const mx=(e.clientX-r.left)*sx, my=(e.clientY-r.top)*sy;
-      eyes.forEach(({el,shine,bx,by})=>{
+      const sx=200/r.width,sy=240/r.height;
+      const mx=(e.clientX-r.left)*sx,my=(e.clientY-r.top)*sy;
+      eyes.forEach(({el,sh,bx,by})=>{
         const dx=mx-bx,dy=my-by,dist=Math.sqrt(dx*dx+dy*dy)||1;
-        const max=4,fx=dx/dist*Math.min(max,dist/10),fy=dy/dist*Math.min(max,dist/10);
-        el.setAttribute('cx',bx+fx); el.setAttribute('cy',by+fy);
-        shine.setAttribute('cx',bx+fx+2); shine.setAttribute('cy',by+fy-2.5);
+        const max=4.5,fx=dx/dist*Math.min(max,dist/8),fy=dy/dist*Math.min(max,dist/8);
+        el.setAttribute('cx',bx+fx);el.setAttribute('cy',by+fy);
+        sh.setAttribute('cx',bx+fx+2);sh.setAttribute('cy',by+fy-2.5);
       });
     });
 
     const projects={
-      letterboxd:{emoji:'🎬',imgSrc:null,imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ? Quels pays dominent le Top 250 ?",descEn:"I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi/letterboxd-data-analysis',projectUrl:'./letterboxd.html'},
-      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:'https://talent-ai-sage.vercel.app/jobs/new'},
+      letterboxd:{emoji:'🎬',imgSrc:null,imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ?",descEn:"I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi/letterboxd-data-analysis',projectUrl:'./letterboxd.html'},
+      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG architecture connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:null},
       breastwise:{emoji:'💜',imgSrc:null,imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ema9995/Breastwise',projectUrl:'https://breastwise.netlify.app/'}
     };
 
