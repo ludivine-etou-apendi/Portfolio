@@ -46,10 +46,6 @@
     .section-title{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:0.4rem;}
     .section-title span{color:var(--accent);}
     .section-underline{width:60px;height:2px;background:var(--accent);margin-bottom:3rem;}
-    .project-filters{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem;}
-    .filter-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:0.4rem 1.1rem;font-family:'Poppins',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.25s;border-radius:2rem;}
-    .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
-    .filter-btn.active{border-color:var(--accent);color:var(--bg);background:var(--accent);}
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
     .project-card{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:var(--bg2);border:1px solid var(--border);transition:border-color 0.3s,transform 0.3s;}
     .project-card:hover{border-color:var(--accent);transform:translateY(-4px);}
@@ -65,7 +61,6 @@
     .project-card:hover .project-card-overlay p{transform:translateY(0);}
     .project-card-link-hint{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.6rem;color:var(--accent);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transform:translateY(8px);transition:transform 0.3s ease 0.1s;}
     .project-card:hover .project-card-link-hint{transform:translateY(0);}
-    .project-card.hidden{display:none;}
     .modal-overlay{display:none;position:fixed;inset:0;background:rgba(5,4,12,0.92);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
     .modal-overlay.active{display:flex;}
     .modal{background:var(--bg2);border:1px solid var(--border);max-width:860px;width:100%;overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;max-height:88vh;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.8);}
@@ -185,13 +180,6 @@
     <div class="section-wrapper">
       <h2 class="section-title" id="projectsTitle">Mes <span>Projets</span></h2>
       <div class="section-underline"></div>
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all" data-fr="Tous" data-en="All">Tous</button>
-        <button class="filter-btn" data-filter="python">Python</button>
-        <button class="filter-btn" data-filter="sql">SQL</button>
-        <button class="filter-btn" data-filter="ia" data-fr="IA & Automatisation" data-en="AI & Automation">IA & Automatisation</button>
-        <button class="filter-btn" data-filter="powerbi">Power BI</button>
-      </div>
       <div class="projects-grid">
         <div class="project-card" data-category="python" onclick="openModal('letterboxd')">
           <div class="project-card-placeholder" style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);">🎬</div>
@@ -327,7 +315,6 @@
       hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:null},
       breastwise:{emoji:'💜',imgSrc:null,imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ema9995/Breastwise',projectUrl:'https://breastwise.netlify.app/'}
     };
-    document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.project-card').forEach(card=>{card.classList.toggle('hidden',btn.dataset.filter!=='all'&&card.dataset.category!==btn.dataset.filter);});document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
     let lang='fr';
     function openModal(id){const p=projects[id];if(!p)return;const preview=document.getElementById('modalPreview');if(p.imgSrc){preview.innerHTML=`<img src="${p.imgSrc}" alt="">`;preview.style.background='';}else{preview.style.background=p.imgBg;preview.innerHTML=`<span style="font-size:5rem">${p.emoji}</span>`;}document.getElementById('modalTitle').textContent=lang==='fr'?p.titleFr:p.titleEn;document.getElementById('modalDesc').textContent=lang==='fr'?p.descFr:p.descEn;document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');let btns='';if(p.githubUrl)btns+=`<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;if(p.projectUrl)btns+=`<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-external-link-alt"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;document.getElementById('modalButtons').innerHTML=btns;document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';}
     function closeModal(){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}
