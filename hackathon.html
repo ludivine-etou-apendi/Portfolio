@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackathon Mirakl — Talent AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0d0d12;
+      --bg2: #181820;
+      --bg3: #1e1e28;
+      --accent: #c084fc;
+      --text: #ffffff;
+      --text-muted: rgba(244,244,255,0.6);
+      --border: rgba(192,132,252,0.15);
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Poppins',sans-serif; background:var(--bg); color:var(--text); }
+
+    nav {
+      position:fixed; top:0; width:100%;
+      background:rgba(13,13,18,0.97); backdrop-filter:blur(12px);
+      padding:1rem 2.5rem; display:flex; align-items:center;
+      justify-content:space-between; z-index:100;
+      border-bottom:1px solid var(--border);
+    }
+    .nav-back {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      text-decoration:none; color:var(--text-muted);
+      font-size:0.78rem; font-weight:600; letter-spacing:0.1em;
+      text-transform:uppercase; transition:color 0.3s;
+    }
+    .nav-back:hover { color:var(--accent); }
+    .nav-title {
+      font-weight:700; font-size:1rem; color:var(--text);
+      position:absolute; left:50%; transform:translateX(-50%);
+    }
+    .nav-title span { color:var(--accent); }
+
+    .hero {
+      min-height:60vh; display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:8rem 2rem 5rem;
+      background:linear-gradient(135deg,#1a0533 0%,#2d1b69 50%,#0d0d12 100%);
+      position:relative; overflow:hidden;
+    }
+    .hero::after {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at center,rgba(192,132,252,0.08) 0%,transparent 70%);
+    }
+    .hero-content { max-width:750px; position:relative; z-index:1; }
+    .hero-label {
+      font-size:0.72rem; font-weight:700; letter-spacing:4px;
+      text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem;
+    }
+    .hero-title {
+      font-size:clamp(2rem,5vw,3.2rem); font-weight:700;
+      line-height:1.2; margin-bottom:1.2rem;
+    }
+    .hero-title span { color:var(--accent); }
+    .hero-subtitle {
+      font-size:0.9rem; color:var(--text-muted);
+      line-height:1.7; margin-bottom:2rem;
+    }
+    .hero-tags { display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; }
+    .hero-tag {
+      border:1px solid rgba(192,132,252,0.3); color:var(--accent);
+      font-size:0.68rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; padding:0.3rem 0.8rem;
+    }
+
+    .section { padding:4.5rem 2rem; }
+    .section-alt { background:var(--bg2); }
+    .section-inner { max-width:820px; margin:0 auto; }
+    .section-title {
+      font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700;
+      margin-bottom:1.5rem; line-height:1.3;
+    }
+    .section-title span { color:var(--accent); }
+    .section-text {
+      color:var(--text-muted); line-height:1.9; font-size:0.95rem;
+      margin-bottom:1.2rem;
+    }
+
+    .objectives {
+      list-style:none; display:flex; flex-direction:column; gap:0.6rem;
+    }
+    .objectives li {
+      display:flex; align-items:flex-start; gap:0.8rem;
+      color:var(--text-muted); font-size:0.88rem; line-height:1.6;
+    }
+    .objectives li::before {
+      content:'→'; color:var(--accent); font-weight:700;
+      flex-shrink:0; margin-top:0.05rem;
+    }
+
+    .steps { display:flex; flex-direction:column; gap:1rem; }
+    .step {
+      display:flex; align-items:flex-start; gap:1.2rem;
+      padding:1.2rem 1.5rem; background:var(--bg3); border:1px solid var(--border);
+    }
+    .step-num {
+      min-width:32px; height:32px; background:var(--accent); color:var(--bg);
+      display:flex; align-items:center; justify-content:center;
+      font-size:0.75rem; font-weight:700; flex-shrink:0;
+    }
+    .step-content h4 { font-size:0.88rem; font-weight:600; margin-bottom:0.25rem; }
+    .step-content p { font-size:0.8rem; color:var(--text-muted); line-height:1.6; }
+
+    .stat-card {
+      display:flex; align-items:center; gap:2rem;
+      background:var(--bg3); border:1px solid rgba(192,132,252,0.2);
+      padding:2rem 2.5rem; margin-bottom:1.5rem;
+    }
+    .stat-number {
+      font-size:4rem; font-weight:700; color:var(--accent);
+      line-height:1; flex-shrink:0;
+    }
+    .stat-label {
+      font-size:1rem; color:var(--text); font-weight:600;
+      line-height:1.5; margin-bottom:0.4rem;
+    }
+    .stat-sublabel {
+      font-size:0.82rem; color:var(--text-muted); line-height:1.6;
+    }
+
+    .result-insight {
+      display:flex; align-items:flex-start; gap:0.7rem;
+      background:rgba(192,132,252,0.06); border-left:3px solid var(--accent);
+      padding:0.9rem 1.1rem; font-size:0.83rem; color:var(--text-muted);
+      line-height:1.6; margin-bottom:1.5rem;
+    }
+    .result-insight i { color:var(--accent); margin-top:0.15rem; flex-shrink:0; }
+    .result-insight strong { color:var(--text); }
+
+    .photo-section {
+      width:100%; border-radius:4px; overflow:hidden;
+      box-shadow:0 8px 40px rgba(0,0,0,0.5); margin-bottom:2rem;
+    }
+    .photo-section img { width:100%; display:block; }
+
+    .btn-row {
+      display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;
+      margin-top:1rem;
+    }
+    .btn-link {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      padding:0.75rem 1.5rem; text-decoration:none;
+      font-size:0.78rem; font-weight:700; letter-spacing:0.12em;
+      text-transform:uppercase; border:2px solid; transition:all 0.3s;
+    }
+    .btn-primary { border-color:var(--accent); color:var(--accent); }
+    .btn-primary:hover { background:var(--accent); color:var(--bg); }
+    .btn-secondary { border-color:var(--text-muted); color:var(--text-muted); }
+    .btn-secondary:hover { border-color:var(--accent); color:var(--accent); }
+
+    .page-footer {
+      background:var(--bg); text-align:center;
+      padding:3rem 2rem; border-top:1px solid var(--border);
+    }
+    .page-footer a {
+      display:inline-flex; align-items:center; gap:0.5rem;
+      text-decoration:none; color:var(--text-muted); font-size:0.78rem;
+      font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+      border:2px solid var(--border); padding:0.7rem 1.5rem; transition:all 0.3s;
+    }
+    .page-footer a:hover { border-color:var(--accent); color:var(--accent); }
+
+    @media(max-width:768px){
+      nav { padding:1rem 1.2rem; }
+      .nav-title { display:none; }
+      .hero { padding:6rem 1.5rem 4rem; }
+      .section { padding:3rem 1.5rem; }
+      .stat-card { flex-direction:column; gap:1rem; text-align:center; }
+      .stat-number { font-size:3rem; }
+      .btn-row { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="./index.html" class="nav-back">
+      <i class="fas fa-arrow-left"></i> Portfolio
+    </a>
+    <span class="nav-title">Hackathon <span>Mirakl</span></span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-content">
+      <p class="hero-label">✦ Hackathon · 2025 · 1er Prix 🏆</p>
+      <h1 class="hero-title">Hackathon Mirakl × Eugenia School<br><span>Talent AI</span></h1>
+      <p class="hero-subtitle">Sourcing RH automatisé par IA · N8N · Dust · RAG</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Dust</span>
+        <span class="hero-tag">RAG</span>
+        <span class="hero-tag">N8N</span>
+        <span class="hero-tag">Python</span>
+        <span class="hero-tag">Scraping</span>
+        <span class="hero-tag">IA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEXTE -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title"><span>Contexte</span></h2>
+      <p class="section-text">
+        Hackathon organisé par Mirakl en partenariat avec Eugenia School autour du thème "Agent Led Company" : comment les agents IA peuvent transformer les métiers de l'entreprise. 3 sujets au programme, 6 équipes finalistes. Notre équipe a travaillé sur le recrutement tech : comment identifier les meilleurs profils plus vite que la concurrence ?
+      </p>
+    </div>
+  </section>
+
+  <!-- OBJECTIFS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title"><span>Objectifs</span></h2>
+      <ul class="objectives">
+        <li>Détecter les profils tech avant la concurrence en analysant leurs signaux publics (GitHub, podcasts, hackathons, Malt, LinkedIn, etc.)</li>
+        <li>Adapter le sourcing au type de poste recherché : chaque rôle n'est pas cherché au même endroit, ni de la même façon</li>
+        <li>Surveiller la santé des concurrents pour identifier le bon moment pour approcher leurs talents</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Solution <span>construite</span></h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Analyse de la fiche de poste</h4>
+            <p>Un agent Dust analyse la fiche de poste uploadée (PDF, texte...) et en extrait automatiquement les critères clés : compétences, niveau d'expérience, profil recherché.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Scraping intelligent et différencié</h4>
+            <p>En fonction du profil cible, la solution scrape les bons endroits : GitHub pour les profils très techniques, hackathons et podcasts pour les leaders et managers, Malt et LinkedIn pour les freelances et profils mixtes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Scoring et message personnalisé</h4>
+            <p>Chaque profil reçoit un score de pertinence (/100). Un message de prise de contact personnalisé est généré — que le RH peut relire, modifier et envoyer s'il le souhaite.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Veille concurrentielle</h4>
+            <p>En tapant le nom d'un concurrent, un agent analyse en temps réel sa santé financière, ses recrutements en cours et ses signaux de départ. Il recommande ensuite l'action à prendre : approcher leurs talents maintenant, rester attentif, ou patienter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTATS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title"><span>Résultats</span></h2>
+
+      <div class="stat-card">
+        <div class="stat-number">🏆</div>
+        <div>
+          <div class="stat-label">1er Prix du Hackathon Mirakl × Eugenia School</div>
+          <div class="stat-sublabel">Sur 3 sujets et 6 équipes finalistes, notre solution Talent AI a remporté le premier prix devant le jury Mirakl.</div>
+        </div>
+      </div>
+
+      <div class="result-insight">
+        <i class="fas fa-chart-line"></i>
+        <span>La solution déployée affiche en temps réel : <strong>offres actives</strong>, <strong>candidats détectés et scorés</strong>, et <strong>messages prêts à envoyer</strong>. Score de pertinence moyen constaté : <strong>83/100</strong>.</span>
+      </div>
+
+      <div class="photo-section">
+        <img src="./assets/hackathon.jpg" alt="Équipe Talent AI avec le jury Mirakl">
+      </div>
+
+      <div class="btn-row">
+        <a href="https://talent-ai-sage.vercel.app" target="_blank" class="btn-link btn-primary">
+          <i class="fas fa-external-link-alt"></i> Voir la solution
+        </a>
+        <a href="https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai" target="_blank" class="btn-link btn-secondary">
+          <i class="fab fa-github"></i> Voir sur GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <a href="./index.html">
+      <i class="fas fa-arrow-left"></i> Retour au portfolio
+    </a>
+  </footer>
+
+</body>
+</html>
