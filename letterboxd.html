@@ -85,9 +85,13 @@
       margin-bottom:1.2rem;
     }
 
+    .objectives-label {
+      font-size:0.75rem; font-weight:700; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--accent);
+      margin-top:2rem; margin-bottom:0.8rem;
+    }
     .objectives {
-      list-style:none; display:flex; flex-direction:column;
-      gap:0.6rem; margin-top:1.5rem;
+      list-style:none; display:flex; flex-direction:column; gap:0.6rem;
     }
     .objectives li {
       display:flex; align-items:flex-start; gap:0.8rem;
@@ -183,16 +187,15 @@
       <h1 class="hero-title">Letterboxd — Analyse des<br><span>Tendances Cinématographiques</span></h1>
       <p class="hero-subtitle">Scraping & analyse de 10 500 films · Python · Google Sheets</p>
       <div class="hero-tags">
-        <span class="hero-tag">Python</span>
-        <span class="hero-tag">BeautifulSoup</span>
+        <span class="hero-tag">Python (BeautifulSoup, Crawl4AI, Pandas, Matplotlib, Seaborn)</span>
         <span class="hero-tag">Web Scraping</span>
+        <span class="hero-tag">Data Analysis</span>
+        <span class="hero-tag">Data Visualization</span>
         <span class="hero-tag">Google Sheets</span>
-        <span class="hero-tag">Analyse de données</span>
       </div>
     </div>
   </div>
 
-  <!-- CONTEXTE + OBJECTIFS -->
   <section class="section">
     <div class="section-inner">
       <h2 class="section-title">Pourquoi <span>Letterboxd</span> ?</h2>
@@ -202,6 +205,7 @@
       <p class="section-text">
         Depuis l'arrivée du streaming et l'accélération due au Covid, l'industrie cinématographique traverse de profonds bouleversements. Le cinéma traditionnel va-t-il survivre face aux plateformes ? Les films produits pour le streaming sont-ils perçus au même niveau que les sorties en salle ? Pour répondre à ces questions, nous avons analysé les données de cette communauté.
       </p>
+      <p class="objectives-label">Objectifs</p>
       <ul class="objectives">
         <li>Comparer la perception des films de streaming vs les films sortis au cinéma</li>
         <li>Identifier les pays dont les films sont les plus appréciés dans le monde</li>
@@ -210,7 +214,6 @@
     </div>
   </section>
 
-  <!-- METHODOLOGIE -->
   <section class="section section-alt">
     <div class="section-inner">
       <h2 class="section-title"><span>Méthodologie</span></h2>
@@ -240,25 +243,22 @@
     </div>
   </section>
 
-  <!-- RESULTATS -->
   <section class="section">
     <div class="section-inner">
       <h2 class="section-title"><span>Résultats</span></h2>
       <div class="charts">
 
-        <!-- GRAPHIQUE 1 — CARTE -->
         <div class="chart-block">
           <h3 class="chart-title">Les États-Unis, le Japon et la France dominent le Top 250 Letterboxd</h3>
           <div class="chart-insight">
             <i class="fas fa-lightbulb"></i>
-            <span>Sur les 250 films les mieux notés de la plateforme, <strong>96 sont américains</strong>, 46 français et 28 japonais. Le cinéma d'auteur européen et asiatique y est fortement représenté.</span>
+            <span>Sur les 250 films les mieux notés de la plateforme, <strong>96 sont américains</strong>, 51 japonais et 46 français.</span>
           </div>
           <div class="chart-frame">
             <iframe src="https://datawrapper.dwcdn.net/XFOJL/2/" height="480" scrolling="no"></iframe>
           </div>
         </div>
 
-        <!-- STAT CARD — STREAMING VS CINEMA -->
         <div class="chart-block">
           <h3 class="chart-title">Aucun film de streaming dans le Top 250 : le cinéma reste la référence culturelle</h3>
           <div class="chart-insight">
@@ -274,12 +274,11 @@
           </div>
         </div>
 
-        <!-- GRAPHIQUE 3 — BOXPLOT INTERACTIF -->
         <div class="chart-block">
           <h3 class="chart-title">Les films des années 1920–1970 dominent Letterboxd, les sorties récentes sont loin derrière</h3>
           <div class="chart-insight">
             <i class="fas fa-lightbulb"></i>
-            <span>Les décennies 1920–1970 affichent les <strong>notes médianes les plus élevées</strong>. Les films récents (2000s–2020s) sont plus nombreux mais obtiennent des notes plus dispersées, signe d'une perception plus hétérogène.</span>
+            <span>Les décennies 1920–1970 affichent les notes médianes les plus élevées.</span>
           </div>
           <iframe src="./assets/boxplot_interactif.html" width="100%" height="500" style="border:none;" scrolling="no"></iframe>
         </div>
