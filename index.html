@@ -33,7 +33,13 @@
     #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 2rem 4rem;background:var(--bg);}
     .hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
     .hero-text{text-align:left;}
-    .open-badge{display:inline-flex;align-items:center;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.35);color:var(--accent);padding:0.4rem 1.2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1.8rem;border-radius:2rem;}
+    .open-badge{display:inline-flex;align-items:center;background:rgba(192,132,252,0.1);border:1px solid rgba(192,132,252,0.35);color:var(--accent);padding:0.4rem 1.2rem;font-size:0.75rem;font-weight:600;letter-spacing:0.05em;margin-bottom:1.8rem;border-radius:2rem;text-decoration:none;cursor:pointer;transition:all 0.3s;animation:badge-glow 2.5s ease-in-out infinite;}
+    @keyframes badge-glow{0%,100%{box-shadow:0 0 0 rgba(192,132,252,0);}50%{box-shadow:0 0 14px rgba(192,132,252,0.45);}}
+    .open-badge:hover{background:rgba(192,132,252,0.25);border-color:var(--accent);}
+    .badge-default{display:inline;}
+    .badge-hover{display:none;}
+    .open-badge:hover .badge-default{display:none;}
+    .open-badge:hover .badge-hover{display:inline;}
     .hero-intro{font-size:1.1rem;color:var(--text-muted);font-style:italic;margin-bottom:0.2rem;}
     .hero-name{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;margin-bottom:1.4rem;line-height:1.05;color:var(--accent);}
     .hero-about{color:var(--text-muted);font-size:0.92rem;line-height:1.85;margin-bottom:0.8rem;}
@@ -107,9 +113,6 @@
     .cert-item-arrow{color:var(--accent);font-size:0.85rem;opacity:0;transition:opacity 0.3s;}
     .cert-item:hover .cert-item-arrow{opacity:1;}
     #contact{text-align:center;}
-    .contact-photo{display:flex;justify-content:center;margin-bottom:2rem;}
-    .photo-placeholder{width:110px;height:110px;border-radius:50%;border:2px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.65rem;gap:0.4rem;letter-spacing:0.05em;}
-    .photo-placeholder i{font-size:2rem;color:var(--accent);opacity:0.5;}
     .contact-sub{color:var(--text-muted);font-size:0.95rem;margin-bottom:2.5rem;line-height:1.7;}
     .contact-links{display:flex;flex-wrap:wrap;justify-content:center;gap:3rem;margin-top:1rem;}
     .contact-link{display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--text-muted);text-decoration:none;transition:color 0.3s;}
@@ -142,7 +145,10 @@
   <section id="hero">
     <div class="hero-inner">
       <div class="hero-text">
-        <div class="open-badge" id="openBadge">Ouverte à de nouvelles opportunités</div>
+        <a href="./assets/CV_Ludivine_Etou_Apendi.pdf" download class="open-badge" id="openBadge">
+          <span class="badge-default" data-fr="Ouverte à de nouvelles opportunités" data-en="Open to new opportunities">Ouverte à de nouvelles opportunités</span>
+          <span class="badge-hover" data-fr="Télécharger mon CV ↓" data-en="Download my CV ↓">Télécharger mon CV ↓</span>
+        </a>
         <p class="hero-intro" data-fr="Enchantée, moi c'est" data-en="Hi, I'm">Enchantée, moi c'est</p>
         <h1 class="hero-name">Ludivine</h1>
         <p class="hero-about" data-fr="Étudiante en première année de MSc IA appliquée au Business à Eugenia School, j'ai de l'expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business." data-en="First-year MSc student in AI Applied to Business at Eugenia School, I have experience in marketing and specialize in data analysis and AI applied to real business challenges.">Étudiante en première année de MSc IA appliquée au Business à Eugenia School, j'ai de l'expérience en marketing et je me spécialise dans l'analyse de données et l'intelligence artificielle appliquée aux enjeux business.</p>
@@ -150,14 +156,7 @@
       </div>
       <div class="hero-avatar-col">
         <svg id="potatoSvg" class="potato-svg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="extrude" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="1.5" dy="1.5" stdDeviation="0" flood-color="rgba(200,200,200,0.85)"/>
-              <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="rgba(150,150,150,0.65)"/>
-              <feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="rgba(100,100,100,0.45)"/>
-              <feDropShadow dx="7" dy="7" stdDeviation="6" flood-color="rgba(0,0,0,0.8)"/>
-            </filter>
-          </defs>
+          <defs><filter id="extrude" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="1.5" dy="1.5" stdDeviation="0" flood-color="rgba(200,200,200,0.85)"/><feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="rgba(150,150,150,0.65)"/><feDropShadow dx="5" dy="5" stdDeviation="0" flood-color="rgba(100,100,100,0.45)"/><feDropShadow dx="7" dy="7" stdDeviation="6" flood-color="rgba(0,0,0,0.8)"/></filter></defs>
           <g filter="url(#extrude)">
             <path d="M100,58 C88,40 62,43 67,58 C72,73 93,66 100,58Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
             <path d="M100,58 C112,40 138,43 133,58 C128,73 107,66 100,58Z" fill="none" stroke="white" stroke-width="3.5" stroke-linejoin="round"/>
@@ -165,12 +164,9 @@
             <path d="M100,196 C67,196 41,173 40,147 C39,119 53,92 77,78 C89,71 107,71 123,77 C148,88 169,115 167,143 C165,173 133,196 100,196Z" fill="none" stroke="white" stroke-width="4.5" stroke-linejoin="round"/>
             <path d="M75,160 Q100,180 125,160" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
           </g>
-          <circle cx="79" cy="128" r="12" fill="white"/>
-          <circle cx="119" cy="128" r="12" fill="white"/>
-          <circle id="pupilLeft" cx="79" cy="128" r="6.5" fill="#0d0d12"/>
-          <circle id="pupilRight" cx="119" cy="128" r="6.5" fill="#0d0d12"/>
-          <circle id="shineLeft" cx="81" cy="125" r="2.2" fill="white"/>
-          <circle id="shineRight" cx="121" cy="125" r="2.2" fill="white"/>
+          <circle cx="79" cy="128" r="12" fill="white"/><circle cx="119" cy="128" r="12" fill="white"/>
+          <circle id="pupilLeft" cx="79" cy="128" r="6.5" fill="#0d0d12"/><circle id="pupilRight" cx="119" cy="128" r="6.5" fill="#0d0d12"/>
+          <circle id="shineLeft" cx="81" cy="125" r="2.2" fill="white"/><circle id="shineRight" cx="121" cy="125" r="2.2" fill="white"/>
         </svg>
       </div>
     </div>
@@ -182,7 +178,8 @@
       <div class="section-underline"></div>
       <div class="projects-grid">
         <div class="project-card" data-category="python" onclick="openModal('letterboxd')">
-          <div class="project-card-placeholder" style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);">🎬</div>
+          <img src="./assets/letterboxd_card.jpg" alt="Letterboxd" class="project-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-card-placeholder" style="display:none;background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);">🎬</div>
           <div class="project-card-overlay">
             <h3 data-fr="Letterboxd — Analyse de 10 500 films" data-en="Letterboxd — Analysis of 10,500 films">Letterboxd — Analyse de 10 500 films</h3>
             <p data-fr="Les films de streaming sont-ils au même niveau que le cinéma ?" data-en="Are streaming films on the same level as cinema?">Les films de streaming sont-ils au même niveau que le cinéma ?</p>
@@ -190,20 +187,21 @@
           </div>
         </div>
         <div class="project-card" data-category="ia" onclick="openModal('hackathon')">
-          <img src="./assets/hackathon.jpg" alt="Hackathon Mirakl" class="project-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <img src="./assets/hackathon_card.jpg" alt="Hackathon Mirakl" class="project-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="project-card-placeholder" style="display:none;background:linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%);">🏆</div>
           <div class="project-card-overlay">
             <h3 data-fr="Hackathon Mirakl — 1er Prix 🏆" data-en="Mirakl Hackathon — 1st Prize 🏆">Hackathon Mirakl — 1er Prix 🏆</h3>
-            <p data-fr="Chatbot IA pour cave à vin premium avec RAG et Supabase." data-en="AI chatbot for premium wine cellar with RAG and Supabase.">Chatbot IA pour cave à vin premium avec RAG et Supabase.</p>
-            <span class="project-card-link-hint"><i class="fab fa-github"></i> <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span></span>
+            <p data-fr="Talent AI : sourcing RH automatisé par IA." data-en="Talent AI: automated HR sourcing by AI.">Talent AI : sourcing RH automatisé par IA.</p>
+            <span class="project-card-link-hint"><i class="fas fa-external-link-alt"></i> <span data-fr="Voir le projet" data-en="View project">Voir le projet</span></span>
           </div>
         </div>
         <div class="project-card" data-category="ia" onclick="openModal('breastwise')">
-          <div class="project-card-placeholder" style="background:linear-gradient(135deg,#1a0533 0%,#6b21a8 100%);">💜</div>
+          <img src="./assets/breastwise_card.jpg" alt="BreastWise" class="project-card-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="project-card-placeholder" style="display:none;background:linear-gradient(135deg,#1a0533 0%,#6b21a8 100%);">💜</div>
           <div class="project-card-overlay">
             <h3 data-fr="BreastWise — Application mobile santé" data-en="BreastWise — Health Mobile App">BreastWise — Application mobile santé</h3>
             <p data-fr="Application mobile pour les femmes touchées par le cancer du sein." data-en="Mobile companion app for breast cancer patients.">Application mobile pour les femmes touchées par le cancer du sein.</p>
-            <span class="project-card-link-hint"><i class="fab fa-github"></i> <span data-fr="Voir sur GitHub" data-en="View on GitHub">Voir sur GitHub</span></span>
+            <span class="project-card-link-hint"><i class="fas fa-external-link-alt"></i> <span data-fr="Voir le projet" data-en="View project">Voir le projet</span></span>
           </div>
         </div>
       </div>
@@ -273,12 +271,6 @@
     <div class="section-wrapper">
       <h2 class="section-title" id="contactTitle">Restons en <span>contact</span></h2>
       <div class="section-underline" style="margin-left:auto;margin-right:auto;"></div>
-      <div class="contact-photo">
-        <div class="photo-placeholder">
-          <i class="fas fa-user"></i>
-          <span data-fr="Photo à venir" data-en="Photo coming soon">Photo à venir</span>
-        </div>
-      </div>
       <p class="contact-sub" data-fr="Merci d'avoir parcouru mon portfolio. N'hésitez pas à me contacter !" data-en="Thanks for visiting my portfolio — feel free to reach out!">Merci d'avoir parcouru mon portfolio. N'hésitez pas à me contacter !</p>
       <div class="contact-links">
         <a href="mailto:ludivine.etouapendi@gmail.com" class="contact-link"><i class="fas fa-envelope"></i><span>Email</span></a>
@@ -301,9 +293,7 @@
     </div>
   </div>
 
-  <footer>
-    <p>© 2026 Ludivine Etou Apendi · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p>
-  </footer>
+  <footer><p>© 2026 Ludivine Etou Apendi · <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span></p></footer>
 
   <script>
     setTimeout(()=>{const s=document.getElementById('splash');s.style.opacity='0';setTimeout(()=>s.remove(),900);},1800);
@@ -311,16 +301,16 @@
     const eyes=[{el:document.getElementById('pupilLeft'),sh:document.getElementById('shineLeft'),bx:79,by:128},{el:document.getElementById('pupilRight'),sh:document.getElementById('shineRight'),bx:119,by:128}];
     document.addEventListener('mousemove',e=>{const r=svg.getBoundingClientRect();const sx=200/r.width,sy=240/r.height;const mx=(e.clientX-r.left)*sx,my=(e.clientY-r.top)*sy;eyes.forEach(({el,sh,bx,by})=>{const dx=mx-bx,dy=my-by,dist=Math.sqrt(dx*dx+dy*dy)||1;const max=4.5,fx=dx/dist*Math.min(max,dist/8),fy=dy/dist*Math.min(max,dist/8);el.setAttribute('cx',bx+fx);el.setAttribute('cy',by+fy);sh.setAttribute('cx',bx+fx+2);sh.setAttribute('cy',by+fy-2.5);});});
     const projects={
-      letterboxd:{emoji:'🎬',imgSrc:null,imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"J'ai scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ?",descEn:"I scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi/letterboxd-data-analysis',projectUrl:'./letterboxd.html'},
-      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu un chatbot IA pour la gestion d'une cave à vin premium. Architecture RAG connectée à une base Supabase contenant plus de 1 400 vins brésiliens, avec agent conversationnel déployé sur Dust.",descEn:"Winner of the Mirakl Hackathon. We built an AI chatbot for premium wine cellar management using RAG connected to a Supabase database of 1,400+ Brazilian wines.",tags:['Dust','RAG','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:'./hackathon.html'},
-      breastwise:{emoji:'💜',imgSrc:null,imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/Breastwise',projectUrl:'./breastwise.html'}
+      letterboxd:{emoji:'🎬',imgSrc:'./assets/letterboxd_card.jpg',imgBg:'linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%)',titleFr:'Letterboxd — Analyse des Tendances Cinématographiques',titleEn:'Letterboxd — Cinematographic Trends Analysis',descFr:"Nous avons scrappé 10 500 films sur Letterboxd pour analyser ce que la plus grande communauté de cinéphiles au monde aime vraiment. Les films de streaming sont-ils aussi bons que ceux du cinéma ? Quelle décennie produit les films les mieux notés ?",descEn:"We scraped 10,500 films from Letterboxd to analyze what the world's largest cinephile community truly loves. Are streaming films as good as cinema? Which decade produces the best-rated films?",tags:['Python','BeautifulSoup','Web Scraping','Google Sheets'],githubUrl:'https://github.com/ludivine-etou-apendi/letterboxd-data-analysis',projectUrl:'./letterboxd.html'},
+      hackathon:{emoji:'🏆',imgSrc:'./assets/hackathon_card.jpg',imgBg:'linear-gradient(135deg,#2d1b69 0%,#7c3aed 100%)',titleFr:'Hackathon Mirakl — 1er Prix 🏆',titleEn:'Mirakl Hackathon — 1st Prize 🏆',descFr:"Lauréate du Hackathon Mirakl organisé par Eugenia School. En équipe, nous avons conçu Talent AI, une solution de sourcing RH automatisé par IA pour détecter et contacter les meilleurs profils tech.",descEn:"Winner of the Mirakl Hackathon. We built Talent AI, an AI-powered HR sourcing solution to detect and contact the best tech profiles.",tags:['Dust','RAG','N8N','Supabase','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/hackathon-mirakl-talentai',projectUrl:'./hackathon.html'},
+      breastwise:{emoji:'💜',imgSrc:'./assets/breastwise_card.jpg',imgBg:'linear-gradient(135deg,#1a0533 0%,#6b21a8 100%)',titleFr:'BreastWise — Application Mobile Santé',titleEn:'BreastWise — Health Mobile App',descFr:"Application mobile d'accompagnement pour les femmes touchées par le cancer du sein. Algorithme de gestion de l'énergie, tableau de bord médical, journal bien-être guidé. Backend Supabase, développement IA-first avec Cursor et React Native.",descEn:"Mobile companion app for breast cancer patients. Energy management algorithm, medical dashboard, guided wellbeing journal. Supabase backend, AI-first with Cursor and React Native.",tags:['React Native','Expo','Supabase','Cursor','IA'],githubUrl:'https://github.com/ludivine-etou-apendi/Breastwise',projectUrl:'./breastwise.html'}
     };
     let lang='fr';
-    function openModal(id){const p=projects[id];if(!p)return;const preview=document.getElementById('modalPreview');if(p.imgSrc){preview.innerHTML=`<img src="${p.imgSrc}" alt="">`;preview.style.background='';}else{preview.style.background=p.imgBg;preview.innerHTML=`<span style="font-size:5rem">${p.emoji}</span>`;}document.getElementById('modalTitle').textContent=lang==='fr'?p.titleFr:p.titleEn;document.getElementById('modalDesc').textContent=lang==='fr'?p.descFr:p.descEn;document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');let btns='';if(p.githubUrl)btns+=`<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;if(p.projectUrl)btns+=`<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-external-link-alt"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;document.getElementById('modalButtons').innerHTML=btns;document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';}
+    function openModal(id){const p=projects[id];if(!p)return;const preview=document.getElementById('modalPreview');if(p.imgSrc){preview.innerHTML=`<img src="${p.imgSrc}" alt="" onerror="this.parentElement.style.background='${p.imgBg}'">`;preview.style.background=p.imgBg;}else{preview.style.background=p.imgBg;preview.innerHTML=`<span style="font-size:5rem">${p.emoji}</span>`;}document.getElementById('modalTitle').textContent=lang==='fr'?p.titleFr:p.titleEn;document.getElementById('modalDesc').textContent=lang==='fr'?p.descFr:p.descEn;document.getElementById('modalTags').innerHTML=p.tags.map(t=>`<span class="modal-tag">${t}</span>`).join('');let btns='';if(p.githubUrl)btns+=`<a href="${p.githubUrl}" target="_blank" class="btn-modal btn-github"><i class="fab fa-github"></i> ${lang==='fr'?'Voir sur GitHub':'View on GitHub'}</a>`;if(p.projectUrl)btns+=`<a href="${p.projectUrl}" target="_blank" class="btn-modal btn-project"><i class="fas fa-external-link-alt"></i> ${lang==='fr'?'Voir le projet':'View Project'}</a>`;document.getElementById('modalButtons').innerHTML=btns;document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden';}
     function closeModal(){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow='';}
     function closeModalOutside(e){if(e.target.id==='modalOverlay')closeModal();}
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-    function toggleLang(){lang=lang==='fr'?'en':'fr';document.getElementById('langBtn').textContent=lang==='fr'?'EN':'FR';document.querySelectorAll('[data-fr]').forEach(el=>{el.innerHTML=lang==='fr'?el.dataset.fr:el.dataset.en;});document.getElementById('openBadge').textContent=lang==='fr'?'Ouverte à de nouvelles opportunités':'Open to new opportunities';document.getElementById('projectsTitle').innerHTML=lang==='fr'?'Mes <span>Projets</span>':'My <span>Projects</span>';document.getElementById('contactTitle').innerHTML=lang==='fr'?'Restons en <span>contact</span>':"Let's stay <span>in touch</span>";}
+    function toggleLang(){lang=lang==='fr'?'en':'fr';document.getElementById('langBtn').textContent=lang==='fr'?'EN':'FR';document.querySelectorAll('[data-fr]').forEach(el=>{el.innerHTML=lang==='fr'?el.dataset.fr:el.dataset.en;});document.getElementById('projectsTitle').innerHTML=lang==='fr'?'Mes <span>Projets</span>':'My <span>Projects</span>';document.getElementById('contactTitle').innerHTML=lang==='fr'?'Restons en <span>contact</span>':"Let's stay <span>in touch</span>";}
     function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
     document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));});
   </script>
