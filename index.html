@@ -67,6 +67,8 @@
     .project-card:hover .project-card-overlay p{transform:translateY(0);}
     .project-card-link-hint{display:inline-flex;align-items:center;gap:0.35rem;margin-top:0.6rem;color:var(--accent);font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;transform:translateY(8px);transition:transform 0.3s ease 0.1s;}
     .project-card:hover .project-card-link-hint{transform:translateY(0);}
+
+    /* ── MODAL ── */
     .modal-overlay{display:none;position:fixed;inset:0;background:rgba(5,4,12,0.92);z-index:2000;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
     .modal-overlay.active{display:flex;}
     .modal{background:var(--bg2);border:1px solid var(--border);max-width:860px;width:100%;overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;max-height:88vh;position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.8);}
@@ -85,6 +87,7 @@
     .btn-github:hover{border-color:var(--accent);color:var(--accent);}
     .btn-project{border-color:var(--accent);color:var(--accent);}
     .btn-project:hover{background:var(--accent);color:var(--bg);}
+
     .stack-grid-flat{display:grid;grid-template-columns:repeat(6,1fr);gap:2rem;justify-items:center;}
     @keyframes icon-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
     .stack-item{display:flex;flex-direction:column;align-items:center;gap:0.8rem;cursor:default;animation:icon-float 3s ease-in-out infinite;}
@@ -121,8 +124,50 @@
     .contact-link span{font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;}
     footer{background:var(--bg);text-align:center;padding:2rem;border-top:1px solid var(--border);}
     footer p{font-size:0.8rem;color:var(--text-muted);}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text{text-align:center;}.hero-avatar-col{order:-1;}.potato-svg{width:160px;}.stack-grid-flat{grid-template-columns:repeat(4,1fr);}}
-    @media(max-width:768px){.nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}.nav-links.open{display:flex;}.hamburger{display:flex;}.modal{grid-template-columns:1fr;}.modal-preview{min-height:180px;}.section-wrapper{padding:3.5rem 1.5rem;}.projects-grid{grid-template-columns:1fr;}.contact-links{gap:2rem;}.stack-grid-flat{grid-template-columns:repeat(3,1fr);}}
+
+    @media(max-width:900px){
+      .hero-inner{grid-template-columns:1fr;text-align:center;}
+      .hero-text{text-align:center;}
+      .hero-avatar-col{order:-1;}
+      .potato-svg{width:160px;}
+      .stack-grid-flat{grid-template-columns:repeat(4,1fr);}
+    }
+
+    @media(max-width:768px){
+      .nav-links{display:none;position:fixed;top:65px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:1.5rem 2rem;gap:1.2rem;}
+      .nav-links.open{display:flex;}
+      .hamburger{display:flex;}
+
+      /* ── FIX MODAL RESPONSIVE ──
+         On passe en flexbox colonne pour que le body
+         puisse vraiment scroller grâce à min-height:0 */
+      .modal{
+        display:flex;
+        flex-direction:column;
+        grid-template-columns:unset;
+        max-height:90vh;
+        max-width:100%;
+      }
+      .modal-preview{
+        min-height:160px;
+        max-height:200px;
+        flex-shrink:0;
+        border-right:none;
+        border-bottom:1px solid var(--border);
+      }
+      .modal-body{
+        flex:1;
+        min-height:0;      /* ← clé : permet à overflow-y:auto de s'activer */
+        overflow-y:auto;
+        padding:1.5rem;
+      }
+      /* ── fin fix modal ── */
+
+      .section-wrapper{padding:3.5rem 1.5rem;}
+      .projects-grid{grid-template-columns:1fr;}
+      .contact-links{gap:2rem;}
+      .stack-grid-flat{grid-template-columns:repeat(3,1fr);}
+    }
   </style>
 </head>
 <body>
