@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +40,14 @@
       position:absolute; left:50%; transform:translateX(-50%);
     }
     .nav-title span { color:var(--accent); }
+    .lang-toggle {
+      background:transparent; border:1px solid var(--border);
+      padding:0.35rem 0.8rem; cursor:pointer;
+      font-family:'Poppins',sans-serif; font-weight:600;
+      font-size:0.78rem; letter-spacing:0.1em;
+      color:var(--text-muted); transition:all 0.3s;
+    }
+    .lang-toggle:hover { border-color:var(--accent); color:var(--accent); }
 
     .hero {
       min-height:60vh; display:flex; align-items:center; justify-content:center;
@@ -164,20 +172,20 @@
 
   <nav>
     <a href="./index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
-    <span class="nav-title">Hackathon <span>Mirakl</span></span>
+    <span class="nav-title" id="navTitle">Hackathon <span style="color:var(--accent)">Mirakl</span></span>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
   </nav>
 
   <div class="hero">
     <div class="hero-content">
-      <p class="hero-label">✦ Hackathon · 2026 · 1er Prix 🏆</p>
+      <p class="hero-label" data-fr="✦ Hackathon · 2026 · 1er Prix 🏆" data-en="✦ Hackathon · 2026 · 1st Prize 🏆">✦ Hackathon · 2026 · 1er Prix 🏆</p>
       <h1 class="hero-title">
         <span class="line1">Hackathon Mirakl × Eugenia School</span>
         <span class="line2">Talent AI</span>
       </h1>
-      <p class="hero-subtitle">Sourcing RH automatisé par IA</p>
+      <p class="hero-subtitle" data-fr="Sourcing RH automatisé par IA" data-en="AI-powered automated HR sourcing">Sourcing RH automatisé par IA</p>
       <div class="hero-tags">
         <span class="hero-tag">Dust</span>
-        <span class="hero-tag">RAG</span>
         <span class="hero-tag">N8N</span>
         <span class="hero-tag">Python</span>
         <span class="hero-tag">Scraping</span>
@@ -188,52 +196,52 @@
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title"><span>Contexte</span></h2>
-      <p class="section-text">Hackathon organisé par Mirakl en partenariat avec Eugenia School autour du thème "Agent Led Company" : comment les agents IA peuvent transformer les métiers de l'entreprise. 3 sujets au programme, 6 équipes finalistes. Notre équipe a travaillé sur le recrutement tech : comment identifier les meilleurs profils plus vite que la concurrence ?</p>
+      <h2 class="section-title"><span data-fr="Contexte" data-en="Context">Contexte</span></h2>
+      <p class="section-text" data-fr='Hackathon organisé par Mirakl en partenariat avec Eugenia School autour du thème "Agent Led Company" : comment les agents IA peuvent transformer les métiers de l&apos;entreprise. 3 sujets au programme, 6 équipes finalistes. Notre équipe a travaillé sur le recrutement tech : comment identifier les meilleurs profils plus vite que la concurrence ?' data-en='Hackathon organized by Mirakl in partnership with Eugenia School around the theme "Agent Led Company": how AI agents can transform business roles. 3 topics, 6 finalist teams. Our team worked on tech recruitment: how to identify the best profiles faster than the competition?'>Hackathon organisé par Mirakl en partenariat avec Eugenia School autour du thème "Agent Led Company" : comment les agents IA peuvent transformer les métiers de l'entreprise. 3 sujets au programme, 6 équipes finalistes. Notre équipe a travaillé sur le recrutement tech : comment identifier les meilleurs profils plus vite que la concurrence ?</p>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title"><span>Objectifs</span></h2>
+      <h2 class="section-title"><span data-fr="Objectifs" data-en="Objectives">Objectifs</span></h2>
       <ul class="objectives">
-        <li>Détecter les profils tech avant la concurrence en analysant leurs signaux publics (GitHub, podcasts, hackathons, Malt, LinkedIn, etc.)</li>
-        <li>Adapter le sourcing au type de poste recherché : chaque rôle n'est pas cherché au même endroit, ni de la même façon</li>
-        <li>Surveiller la santé des concurrents pour identifier le bon moment pour approcher leurs talents</li>
+        <li data-fr="Détecter les profils tech avant la concurrence en analysant leurs signaux publics (GitHub, podcasts, hackathons, Malt, LinkedIn, etc.)" data-en="Detect tech profiles before the competition by analyzing their public signals (GitHub, podcasts, hackathons, Malt, LinkedIn, etc.)">Détecter les profils tech avant la concurrence en analysant leurs signaux publics (GitHub, podcasts, hackathons, Malt, LinkedIn, etc.)</li>
+        <li data-fr="Adapter le sourcing au type de poste recherché : chaque rôle n'est pas cherché au même endroit, ni de la même façon" data-en="Adapt sourcing to the type of position sought: each role is not searched in the same place, nor in the same way">Adapter le sourcing au type de poste recherché : chaque rôle n'est pas cherché au même endroit, ni de la même façon</li>
+        <li data-fr="Surveiller la santé des concurrents pour identifier le bon moment pour approcher leurs talents" data-en="Monitor competitors' health to identify the right moment to approach their talents">Surveiller la santé des concurrents pour identifier le bon moment pour approcher leurs talents</li>
       </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">Solution <span>construite</span></h2>
+      <h2 class="section-title"><span data-fr="Solution " data-en="Solution ">Solution </span><span style="color:var(--accent)" data-fr="construite" data-en="built">construite</span></h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content">
-            <h4>Analyse de la fiche de poste</h4>
-            <p>Un agent Dust analyse la fiche de poste uploadée (PDF, texte...) et en extrait automatiquement les critères clés : compétences, niveau d'expérience, etc.</p>
+            <h4 data-fr="Analyse de la fiche de poste" data-en="Job description analysis">Analyse de la fiche de poste</h4>
+            <p data-fr="Un agent Dust analyse la fiche de poste uploadée (PDF, texte...) et en extrait automatiquement les critères clés : compétences, niveau d'expérience, etc." data-en="A Dust agent analyzes the uploaded job description (PDF, text...) and automatically extracts key criteria: skills, experience level, etc.">Un agent Dust analyse la fiche de poste uploadée (PDF, texte...) et en extrait automatiquement les critères clés : compétences, niveau d'expérience, etc.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h4>Scraping intelligent et différencié</h4>
-            <p>En fonction du profil cible, la solution scrape les bons endroits : GitHub pour les profils très techniques, hackathons et podcasts pour les leaders et managers, Malt et LinkedIn pour les freelances et profils mixtes.</p>
+            <h4 data-fr="Scraping intelligent et différencié" data-en="Smart and differentiated scraping">Scraping intelligent et différencié</h4>
+            <p data-fr="En fonction du profil cible, la solution scrape les bons endroits : GitHub pour les profils très techniques, hackathons et podcasts pour les leaders et managers, Malt et LinkedIn pour les freelances et profils mixtes." data-en="Depending on the target profile, the solution scrapes the right places: GitHub for highly technical profiles, hackathons and podcasts for leaders and managers, Malt and LinkedIn for freelancers and mixed profiles.">En fonction du profil cible, la solution scrape les bons endroits : GitHub pour les profils très techniques, hackathons et podcasts pour les leaders et managers, Malt et LinkedIn pour les freelances et profils mixtes.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
-            <h4>Scoring et message personnalisé</h4>
-            <p>Chaque profil reçoit un score de pertinence (/100). Un message de prise de contact personnalisé est généré — que le RH peut relire, modifier et envoyer s'il le souhaite.</p>
+            <h4 data-fr="Scoring et message personnalisé" data-en="Scoring and personalized message">Scoring et message personnalisé</h4>
+            <p data-fr="Chaque profil reçoit un score de pertinence (/100). Un message de prise de contact personnalisé est généré — que le RH peut relire, modifier et envoyer s'il le souhaite." data-en="Each profile receives a relevance score (/100). A personalized outreach message is generated — which the HR can review, edit and send if they wish.">Chaque profil reçoit un score de pertinence (/100). Un message de prise de contact personnalisé est généré — que le RH peut relire, modifier et envoyer s'il le souhaite.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">4</div>
           <div class="step-content">
-            <h4>Veille concurrentielle</h4>
-            <p>En tapant le nom d'un concurrent, un agent analyse en temps réel sa santé financière, ses recrutements en cours et ses signaux de départ. L'agent formule ensuite une recommandation parmi les trois suivantes : <strong>Contacter maintenant</strong>, <strong>Surveiller</strong>, ou <strong>Ne pas prioriser</strong>.</p>
+            <h4 data-fr="Veille concurrentielle" data-en="Competitive intelligence">Veille concurrentielle</h4>
+            <p data-fr="En tapant le nom d'un concurrent, un agent analyse en temps réel sa santé financière, ses recrutements en cours et ses signaux de départ. L'agent formule ensuite une recommandation parmi les trois suivantes : <strong>Contacter maintenant</strong>, <strong>Surveiller</strong>, ou <strong>Ne pas prioriser</strong>." data-en="By entering a competitor's name, an agent analyzes in real time their financial health, ongoing recruitments and departure signals. The agent then formulates a recommendation from the following three: <strong>Contact now</strong>, <strong>Monitor</strong>, or <strong>Do not prioritize</strong>.">En tapant le nom d'un concurrent, un agent analyse en temps réel sa santé financière, ses recrutements en cours et ses signaux de départ. L'agent formule ensuite une recommandation parmi les trois suivantes : <strong>Contacter maintenant</strong>, <strong>Surveiller</strong>, ou <strong>Ne pas prioriser</strong>.</p>
           </div>
         </div>
       </div>
@@ -242,32 +250,51 @@
 
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title"><span>Résultats</span></h2>
+      <h2 class="section-title"><span data-fr="Résultats" data-en="Results">Résultats</span></h2>
       <div class="stat-card">
         <div class="stat-number">🏆</div>
         <div>
-          <div class="stat-label">1er Prix du Hackathon Mirakl × Eugenia School</div>
-          <div class="stat-sublabel">Sur 3 sujets et 6 équipes finalistes, notre solution Talent AI a remporté le premier prix devant le jury Mirakl.</div>
+          <div class="stat-label" data-fr="1er Prix du Hackathon Mirakl × Eugenia School" data-en="1st Prize at the Mirakl × Eugenia School Hackathon">1er Prix du Hackathon Mirakl × Eugenia School</div>
+          <div class="stat-sublabel" data-fr="Sur 3 sujets et 6 équipes finalistes, notre solution Talent AI a remporté le premier prix devant le jury Mirakl." data-en="Out of 3 topics and 6 finalist teams, our Talent AI solution won first prize in front of the Mirakl jury.">Sur 3 sujets et 6 équipes finalistes, notre solution Talent AI a remporté le premier prix devant le jury Mirakl.</div>
         </div>
       </div>
       <div class="result-insight">
         <i class="fas fa-chart-line"></i>
-        <span>La solution déployée affiche en temps réel : <strong>offres actives</strong>, <strong>candidats détectés et scorés</strong>, et <strong>messages prêts à envoyer</strong>.</span>
+        <span data-fr="La solution déployée affiche en temps réel : <strong>offres actives</strong>, <strong>candidats détectés et scorés</strong>, et <strong>messages prêts à envoyer</strong>." data-en="The deployed solution displays in real time: <strong>active job offers</strong>, <strong>detected and scored candidates</strong>, and <strong>messages ready to send</strong>.">La solution déployée affiche en temps réel : <strong>offres actives</strong>, <strong>candidats détectés et scorés</strong>, et <strong>messages prêts à envoyer</strong>.</span>
       </div>
       <div class="photo-section">
         <img src="./assets/hackathon.jpg" alt="Équipe Talent AI avec le jury Mirakl">
       </div>
       <div class="btn-row">
         <a href="https://talent-ai-sage.vercel.app" target="_blank" class="btn-link btn-primary">
-          <i class="fas fa-external-link-alt"></i> Voir la solution
+          <i class="fas fa-external-link-alt"></i>
+          <span data-fr="Voir la solution" data-en="View solution">Voir la solution</span>
         </a>
       </div>
     </div>
   </section>
 
   <footer class="page-footer">
-    <a href="./index.html"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+    <a href="./index.html">
+      <i class="fas fa-arrow-left"></i>
+      <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span>
+    </a>
   </footer>
+
+  <script>
+    let lang = 'fr';
+    function toggleLang() {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+      });
+      document.title = lang === 'fr'
+        ? 'Hackathon Mirakl — Talent AI'
+        : 'Mirakl Hackathon — Talent AI';
+    }
+  </script>
 
 </body>
 </html>
