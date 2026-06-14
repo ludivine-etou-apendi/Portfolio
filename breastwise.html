@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +40,14 @@
       position:absolute; left:50%; transform:translateX(-50%);
     }
     .nav-title span { color:var(--accent); }
+    .lang-toggle {
+      background:transparent; border:1px solid var(--border);
+      padding:0.35rem 0.8rem; cursor:pointer;
+      font-family:'Poppins',sans-serif; font-weight:600;
+      font-size:0.78rem; letter-spacing:0.1em;
+      color:var(--text-muted); transition:all 0.3s;
+    }
+    .lang-toggle:hover { border-color:var(--accent); color:var(--accent); }
 
     .hero {
       min-height:60vh; display:flex; align-items:center; justify-content:center;
@@ -143,13 +151,14 @@
   <nav>
     <a href="./index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
     <span class="nav-title"><span>BreastWise</span></span>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
   </nav>
 
   <div class="hero">
     <div class="hero-content">
-      <p class="hero-label">✦ Projet Mobile · 2026</p>
+      <p class="hero-label" data-fr="✦ Projet Mobile · 2026" data-en="✦ Mobile Project · 2026">✦ Projet Mobile · 2026</p>
       <h1 class="hero-title">BreastWise</h1>
-      <p class="hero-subtitle">Mieux vivre le cancer du sein avec l'IA — Application mobile d'accompagnement</p>
+      <p class="hero-subtitle" data-fr="Mieux vivre le cancer du sein avec l'IA — Application mobile d'accompagnement" data-en="Living better with breast cancer through AI — Mobile companion app">Mieux vivre le cancer du sein avec l'IA — Application mobile d'accompagnement</p>
       <div class="hero-tags">
         <span class="hero-tag">React Native</span>
         <span class="hero-tag">Expo</span>
@@ -162,52 +171,71 @@
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title"><span>Contexte</span></h2>
-      <p class="section-text">Application mobile conçue pour simplifier le quotidien des femmes touchées par le cancer du sein. L'idée : réduire la charge mentale en centralisant le suivi médical, le soutien émotionnel et l'organisation du quotidien dans un seul espace bienveillant.</p>
+      <h2 class="section-title"><span data-fr="Contexte" data-en="Context">Contexte</span></h2>
+      <p class="section-text" data-fr="Application mobile conçue pour simplifier le quotidien des femmes touchées par le cancer du sein. L'idée : réduire la charge mentale en centralisant le suivi médical, le soutien émotionnel et l'organisation du quotidien dans un seul espace bienveillant." data-en="Mobile app designed to simplify daily life for women affected by breast cancer. The idea: reduce mental load by centralizing medical tracking, emotional support and daily organization in one caring space.">Application mobile conçue pour simplifier le quotidien des femmes touchées par le cancer du sein. L'idée : réduire la charge mentale en centralisant le suivi médical, le soutien émotionnel et l'organisation du quotidien dans un seul espace bienveillant.</p>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title"><span>Objectifs</span></h2>
+      <h2 class="section-title"><span data-fr="Objectifs" data-en="Objectives">Objectifs</span></h2>
       <ul class="objectives">
-        <li>Créer un compagnon numérique qui accompagne les patientes tout au long de leur traitement</li>
-        <li>Adapter l'organisation quotidienne à l'état de santé réel de l'utilisatrice</li>
-        <li>Offrir un espace de soutien émotionnel : journal guidé et gestion du stress</li>
-        <li>Centraliser le suivi médical : rendez-vous et avancée du traitement</li>
+        <li data-fr="Créer un compagnon numérique qui accompagne les patientes tout au long de leur traitement" data-en="Create a digital companion that supports patients throughout their treatment">Créer un compagnon numérique qui accompagne les patientes tout au long de leur traitement</li>
+        <li data-fr="Adapter l'organisation quotidienne à l'état de santé réel de l'utilisatrice" data-en="Adapt daily organization to the user's actual health condition">Adapter l'organisation quotidienne à l'état de santé réel de l'utilisatrice</li>
+        <li data-fr="Offrir un espace de soutien émotionnel : journal guidé et gestion du stress" data-en="Provide an emotional support space: guided journal and stress management">Offrir un espace de soutien émotionnel : journal guidé et gestion du stress</li>
+        <li data-fr="Centraliser le suivi médical : rendez-vous et avancée du traitement" data-en="Centralize medical tracking: appointments and treatment progress">Centraliser le suivi médical : rendez-vous et avancée du traitement</li>
       </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title"><span>Résultats</span></h2>
+      <h2 class="section-title"><span data-fr="Résultats" data-en="Results">Résultats</span></h2>
       <ul class="results-list">
-        <li>Parcours d'onboarding guidé et personnalisé</li>
-        <li>Algorithme de gestion d'énergie qui adapte les tâches selon le niveau de fatigue</li>
-        <li>Tableau de bord médical : suivi des rendez-vous et de l'avancée du traitement en temps réel</li>
-        <li>Journal bien-être et exercices de gestion du stress intégrés</li>
+        <li data-fr="Parcours d'onboarding guidé et personnalisé" data-en="Guided and personalized onboarding journey">Parcours d'onboarding guidé et personnalisé</li>
+        <li data-fr="Algorithme de gestion d'énergie qui adapte les tâches selon le niveau de fatigue" data-en="Energy management algorithm that adapts tasks according to fatigue level">Algorithme de gestion d'énergie qui adapte les tâches selon le niveau de fatigue</li>
+        <li data-fr="Tableau de bord médical : suivi des rendez-vous et de l'avancée du traitement en temps réel" data-en="Medical dashboard: real-time appointment and treatment progress tracking">Tableau de bord médical : suivi des rendez-vous et de l'avancée du traitement en temps réel</li>
+        <li data-fr="Journal bien-être et exercices de gestion du stress intégrés" data-en="Integrated wellbeing journal and stress management exercises">Journal bien-être et exercices de gestion du stress intégrés</li>
       </ul>
 
       <div class="demo-block">
-        <p class="demo-label">Démo de l'application</p>
+        <p class="demo-label" data-fr="Démo de l'application" data-en="App demo">Démo de l'application</p>
         <video class="demo-video" controls>
           <source src="./assets/breastwise_demo.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture vidéo.
+          <span data-fr="Votre navigateur ne supporte pas la lecture vidéo." data-en="Your browser does not support video playback.">Votre navigateur ne supporte pas la lecture vidéo.</span>
         </video>
       </div>
 
       <div class="btn-row">
         <a href="https://breastwise.netlify.app/" target="_blank" class="btn-link btn-primary">
-          <i class="fas fa-external-link-alt"></i> Voir le prototype
+          <i class="fas fa-external-link-alt"></i>
+          <span data-fr="Voir le prototype" data-en="View prototype">Voir le prototype</span>
         </a>
       </div>
     </div>
   </section>
 
   <footer class="page-footer">
-    <a href="./index.html"><i class="fas fa-arrow-left"></i> Retour au portfolio</a>
+    <a href="./index.html">
+      <i class="fas fa-arrow-left"></i>
+      <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span>
+    </a>
   </footer>
+
+  <script>
+    let lang = 'fr';
+    function toggleLang() {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+      });
+      document.title = lang === 'fr'
+        ? 'BreastWise — Application mobile santé'
+        : 'BreastWise — Health Mobile App';
+    }
+  </script>
 
 </body>
 </html>
