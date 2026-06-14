@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +40,14 @@
       position:absolute; left:50%; transform:translateX(-50%);
     }
     .nav-title span { color:var(--accent); }
+    .lang-toggle {
+      background:transparent; border:1px solid var(--border);
+      padding:0.35rem 0.8rem; cursor:pointer;
+      font-family:'Poppins',sans-serif; font-weight:600;
+      font-size:0.78rem; letter-spacing:0.1em;
+      color:var(--text-muted); transition:all 0.3s;
+    }
+    .lang-toggle:hover { border-color:var(--accent); color:var(--accent); }
 
     .hero {
       min-height:60vh; display:flex; align-items:center; justify-content:center;
@@ -85,9 +93,7 @@
       margin-bottom:1.2rem;
     }
 
-    .objectives {
-      list-style:none; display:flex; flex-direction:column; gap:0.6rem;
-    }
+    .objectives { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
     .objectives li {
       display:flex; align-items:flex-start; gap:0.8rem;
       color:var(--text-muted); font-size:0.88rem; line-height:1.6;
@@ -141,9 +147,7 @@
       font-size:1rem; color:var(--text); font-weight:600;
       line-height:1.5; margin-bottom:0.4rem;
     }
-    .stat-sublabel {
-      font-size:0.82rem; color:var(--text-muted); line-height:1.6;
-    }
+    .stat-sublabel { font-size:0.82rem; color:var(--text-muted); line-height:1.6; }
 
     .page-footer {
       background:var(--bg); text-align:center;
@@ -173,14 +177,18 @@
     <a href="./index.html" class="nav-back">
       <i class="fas fa-arrow-left"></i> Portfolio
     </a>
-    <span class="nav-title">Letterboxd <span>— Analyse</span></span>
+    <span class="nav-title" id="navTitle">Letterboxd <span>— Analyse</span></span>
+    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">EN</button>
   </nav>
 
   <div class="hero">
     <div class="hero-content">
-      <p class="hero-label">✦ Projet Data · 2025</p>
-      <h1 class="hero-title">Letterboxd — Analyse des<br><span>Tendances Cinématographiques</span></h1>
-      <p class="hero-subtitle">Scraping & analyse de 10 500 films · Python · Google Sheets</p>
+      <p class="hero-label" data-fr="✦ Projet Data · 2025" data-en="✦ Data Project · 2025">✦ Projet Data · 2025</p>
+      <h1 class="hero-title">
+        <span data-fr="Letterboxd — Analyse des" data-en="Letterboxd — Analysis of">Letterboxd — Analyse des</span><br>
+        <span style="color:var(--accent)" data-fr="Tendances Cinématographiques" data-en="Cinematographic Trends">Tendances Cinématographiques</span>
+      </h1>
+      <p class="hero-subtitle" data-fr="Scraping &amp; analyse de 10 500 films · Python · Google Sheets" data-en="Scraping &amp; analysis of 10,500 films · Python · Google Sheets">Scraping &amp; analyse de 10 500 films · Python · Google Sheets</p>
       <div class="hero-tags">
         <span class="hero-tag">Python (BeautifulSoup, Crawl4AI, Pandas, Matplotlib, Seaborn)</span>
         <span class="hero-tag">Web Scraping</span>
@@ -193,50 +201,48 @@
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title">Pourquoi <span>Letterboxd</span> ?</h2>
-      <p class="section-text">
-        Dans le cadre d'un projet académique Python, nous avons choisi d'analyser Letterboxd, le plus grand réseau social dédié au cinéma. Des millions de cinéphiles y regardent, commentent, listent et notent les films qu'ils ont vus.
-      </p>
-      <p class="section-text">
-        Depuis l'arrivée du streaming et l'accélération due au Covid, l'industrie cinématographique traverse de profonds bouleversements. Le cinéma traditionnel va-t-il survivre face aux plateformes ? Les films produits pour le streaming sont-ils perçus au même niveau que les sorties en salle ? Pour répondre à ces questions, nous avons analysé les données de cette communauté.
-      </p>
+      <h2 class="section-title">
+        <span data-fr="Pourquoi " data-en="Why ">Pourquoi </span><span style="color:var(--accent)">Letterboxd</span><span data-fr=" ?" data-en="?"> ?</span>
+      </h2>
+      <p class="section-text" data-fr="Dans le cadre d'un projet académique Python, nous avons choisi d'analyser Letterboxd, le plus grand réseau social dédié au cinéma. Des millions de cinéphiles y regardent, commentent, listent et notent les films qu'ils ont vus." data-en="As part of an academic Python project, we chose to analyze Letterboxd, the largest social network dedicated to cinema. Millions of film lovers watch, comment, list and rate films they have seen.">Dans le cadre d'un projet académique Python, nous avons choisi d'analyser Letterboxd, le plus grand réseau social dédié au cinéma. Des millions de cinéphiles y regardent, commentent, listent et notent les films qu'ils ont vus.</p>
+      <p class="section-text" data-fr="Depuis l'arrivée du streaming et l'accélération due au Covid, l'industrie cinématographique traverse de profonds bouleversements. Le cinéma traditionnel va-t-il survivre face aux plateformes ? Les films produits pour le streaming sont-ils perçus au même niveau que les sorties en salle ? Pour répondre à ces questions, nous avons analysé les données de cette communauté." data-en="Since the rise of streaming and the acceleration caused by Covid, the film industry has been going through profound upheaval. Will traditional cinema survive against streaming platforms? Are films produced for streaming perceived at the same level as theatrical releases? To answer these questions, we analyzed data from this community.">Depuis l'arrivée du streaming et l'accélération due au Covid, l'industrie cinématographique traverse de profonds bouleversements. Le cinéma traditionnel va-t-il survivre face aux plateformes ? Les films produits pour le streaming sont-ils perçus au même niveau que les sorties en salle ? Pour répondre à ces questions, nous avons analysé les données de cette communauté.</p>
     </div>
   </section>
 
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title"><span>Objectifs</span></h2>
+      <h2 class="section-title"><span style="color:var(--accent)" data-fr="Objectifs" data-en="Objectives">Objectifs</span></h2>
       <ul class="objectives">
-        <li>Comparer la perception des films de streaming vs les films sortis au cinéma</li>
-        <li>Identifier les pays dont les films sont les plus appréciés dans le monde</li>
-        <li>Comprendre comment les préférences cinéphiles évoluent selon les décennies</li>
+        <li data-fr="Comparer la perception des films de streaming vs les films sortis au cinéma" data-en="Compare the perception of streaming films vs films released in theatres">Comparer la perception des films de streaming vs les films sortis au cinéma</li>
+        <li data-fr="Identifier les pays dont les films sont les plus appréciés dans le monde" data-en="Identify which countries produce the most appreciated films worldwide">Identifier les pays dont les films sont les plus appréciés dans le monde</li>
+        <li data-fr="Comprendre comment les préférences cinéphiles évoluent selon les décennies" data-en="Understand how cinephile preferences evolve across decades">Comprendre comment les préférences cinéphiles évoluent selon les décennies</li>
       </ul>
     </div>
   </section>
 
   <section class="section">
     <div class="section-inner">
-      <h2 class="section-title"><span>Méthodologie</span></h2>
+      <h2 class="section-title"><span style="color:var(--accent)" data-fr="Méthodologie" data-en="Methodology">Méthodologie</span></h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content">
-            <h4>Collecte des liens</h4>
-            <p>Scraping des pages Letterboxd pour récupérer 10 500 liens de films.</p>
+            <h4 data-fr="Collecte des liens" data-en="Link collection">Collecte des liens</h4>
+            <p data-fr="Scraping des pages Letterboxd pour récupérer 10 500 liens de films." data-en="Scraping Letterboxd pages to collect 10,500 film links.">Scraping des pages Letterboxd pour récupérer 10 500 liens de films.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-content">
-            <h4>Scraping des données</h4>
-            <p>Pour chaque film, 26 variables collectées : titre, année, genre, likes, vues, festivals, durée, pays... Les données ont été exportées en CSV et JSON.</p>
+            <h4 data-fr="Scraping des données" data-en="Data scraping">Scraping des données</h4>
+            <p data-fr="Pour chaque film, 26 variables collectées : titre, année, genre, likes, vues, festivals, durée, pays... Les données ont été exportées en CSV et JSON." data-en="For each film, 26 variables collected: title, year, genre, likes, views, festivals, duration, country... Data exported in CSV and JSON.">Pour chaque film, 26 variables collectées : titre, année, genre, likes, vues, festivals, durée, pays... Les données ont été exportées en CSV et JSON.</p>
           </div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-content">
-            <h4>Analyse</h4>
-            <p>Nettoyage des données et analyse statistique pour identifier les tendances de la communauté.</p>
+            <h4 data-fr="Analyse" data-en="Analysis">Analyse</h4>
+            <p data-fr="Nettoyage des données et analyse statistique pour identifier les tendances de la communauté." data-en="Data cleaning and statistical analysis to identify community trends.">Nettoyage des données et analyse statistique pour identifier les tendances de la communauté.</p>
           </div>
         </div>
       </div>
@@ -245,14 +251,14 @@
 
   <section class="section section-alt">
     <div class="section-inner">
-      <h2 class="section-title"><span>Résultats</span></h2>
+      <h2 class="section-title"><span style="color:var(--accent)" data-fr="Résultats" data-en="Results">Résultats</span></h2>
       <div class="charts">
 
         <div class="chart-block">
-          <h3 class="chart-title">Les États-Unis, le Japon et la France dominent le Top 250 Letterboxd</h3>
+          <h3 class="chart-title" data-fr="Les États-Unis, le Japon et la France dominent le Top 250 Letterboxd" data-en="The US, Japan and France dominate the Letterboxd Top 250">Les États-Unis, le Japon et la France dominent le Top 250 Letterboxd</h3>
           <div class="chart-insight">
             <i class="fas fa-lightbulb"></i>
-            <span>Sur les 250 films les mieux notés de la plateforme, <strong>96 sont américains</strong>, 51 japonais et 46 français.</span>
+            <span data-fr="Sur les 250 films les mieux notés de la plateforme, <strong>96 sont américains</strong>, 51 japonais et 46 français." data-en="Of the 250 highest-rated films on the platform, <strong>96 are American</strong>, 51 Japanese and 46 French.">Sur les 250 films les mieux notés de la plateforme, <strong>96 sont américains</strong>, 51 japonais et 46 français.</span>
           </div>
           <div class="chart-frame">
             <iframe src="https://datawrapper.dwcdn.net/XFOJL/2/" height="480" scrolling="no"></iframe>
@@ -260,25 +266,25 @@
         </div>
 
         <div class="chart-block">
-          <h3 class="chart-title">Aucun film de streaming dans le Top 250 : le cinéma reste la référence culturelle</h3>
+          <h3 class="chart-title" data-fr="Aucun film de streaming dans le Top 250 : le cinéma reste la référence culturelle" data-en="No streaming film in the Top 250: cinema remains the cultural benchmark">Aucun film de streaming dans le Top 250 : le cinéma reste la référence culturelle</h3>
           <div class="chart-insight">
             <i class="fas fa-lightbulb"></i>
-            <span>Les films distribués en salle ont une présence dans les listes Letterboxd <strong>deux fois supérieure</strong> à celle des films exclusivement streamés — et dominent intégralement le Top 250.</span>
+            <span data-fr="Les films distribués en salle ont une présence dans les listes Letterboxd <strong>deux fois supérieure</strong> à celle des films exclusivement streamés — et dominent intégralement le Top 250." data-en="Theatrically released films have a presence in Letterboxd lists <strong>twice as high</strong> as exclusively streamed films — and completely dominate the Top 250.">Les films distribués en salle ont une présence dans les listes Letterboxd <strong>deux fois supérieure</strong> à celle des films exclusivement streamés — et dominent intégralement le Top 250.</span>
           </div>
           <div class="stat-card">
             <div class="stat-number">0</div>
             <div>
-              <div class="stat-label">film exclusivement streaming dans le Top 250 Letterboxd</div>
-              <div class="stat-sublabel">Aucune production Netflix, Prime ou Disney+ n'apparaît dans le classement des 250 films les mieux notés par la communauté. Le cinéma traditionnel domine encore la culture cinéphile.</div>
+              <div class="stat-label" data-fr="film exclusivement streaming dans le Top 250 Letterboxd" data-en="exclusively streaming film in the Letterboxd Top 250">film exclusivement streaming dans le Top 250 Letterboxd</div>
+              <div class="stat-sublabel" data-fr="Aucune production Netflix, Prime ou Disney+ n'apparaît dans le classement des 250 films les mieux notés par la communauté. Le cinéma traditionnel domine encore la culture cinéphile." data-en="No Netflix, Prime or Disney+ production appears in the ranking of the 250 highest-rated films by the community. Traditional cinema still dominates cinephile culture.">Aucune production Netflix, Prime ou Disney+ n'apparaît dans le classement des 250 films les mieux notés par la communauté. Le cinéma traditionnel domine encore la culture cinéphile.</div>
             </div>
           </div>
         </div>
 
         <div class="chart-block">
-          <h3 class="chart-title">Les films des années 1920–1970 dominent Letterboxd, les sorties récentes sont loin derrière</h3>
+          <h3 class="chart-title" data-fr="Les films des années 1920–1970 dominent Letterboxd, les sorties récentes sont loin derrière" data-en="Films from 1920–1970 dominate Letterboxd, recent releases fall far behind">Les films des années 1920–1970 dominent Letterboxd, les sorties récentes sont loin derrière</h3>
           <div class="chart-insight">
             <i class="fas fa-lightbulb"></i>
-            <span>Les décennies 1920–1970 affichent les notes médianes les plus élevées.</span>
+            <span data-fr="Les décennies 1920–1970 affichent les notes médianes les plus élevées." data-en="The 1920–1970 decades show the highest median ratings.">Les décennies 1920–1970 affichent les notes médianes les plus élevées.</span>
           </div>
           <iframe src="./assets/boxplot_interactif.html" width="100%" height="500" style="border:none;" scrolling="no"></iframe>
         </div>
@@ -289,9 +295,29 @@
 
   <footer class="page-footer">
     <a href="./index.html">
-      <i class="fas fa-arrow-left"></i> Retour au portfolio
+      <i class="fas fa-arrow-left"></i>
+      <span data-fr="Retour au portfolio" data-en="Back to portfolio">Retour au portfolio</span>
     </a>
   </footer>
+
+  <script>
+    let lang = 'fr';
+    function toggleLang() {
+      lang = lang === 'fr' ? 'en' : 'fr';
+      document.getElementById('langBtn').textContent = lang === 'fr' ? 'EN' : 'FR';
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.dataset.fr : el.dataset.en;
+      });
+      const navTitle = document.getElementById('navTitle');
+      navTitle.innerHTML = lang === 'fr'
+        ? 'Letterboxd <span style="color:var(--accent)">— Analyse</span>'
+        : 'Letterboxd <span style="color:var(--accent)">— Analysis</span>';
+      document.title = lang === 'fr'
+        ? 'Letterboxd — Analyse des Tendances Cinématographiques'
+        : 'Letterboxd — Cinematographic Trends Analysis';
+    }
+  </script>
 
 </body>
 </html>
